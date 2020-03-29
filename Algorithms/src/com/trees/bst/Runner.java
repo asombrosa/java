@@ -10,6 +10,7 @@ public class Runner {
 		RightViewOfBinaryTree rightViewOfBinaryTree = new RightViewOfBinaryTree();
 		TopViewOfBinaryTree topViewOfBinaryTree = new TopViewOfBinaryTree();
 		BottomViewOfBinaryTree bottomViewOfBinaryTree = new BottomViewOfBinaryTree();
+		CheckChildSumPropertyOfTree checkChildSumPropertyOfTree = new CheckChildSumPropertyOfTree();
 		Tree root = null;
 		root = insertAndSearchInBST.insert(20, root);
 		insertAndSearchInBST.insert(10, root);
@@ -56,6 +57,27 @@ public class Runner {
 		System.out.println();
 		System.out.println("Bottom view");
 		bottomViewOfBinaryTree.bottomView(root);
+		System.out.println();
+		System.out.println("check child sum property");
+		if(checkChildSumPropertyOfTree.childSumPropertyCheck(root)) {
+        	System.out.println("Property true");
+        }else {
+        	System.out.println("Property false");
+        }
+		Tree root1 = null;
+		root1 = new Tree(10); 
+        root1.left = new Tree(8); 
+        root1.right = new Tree(2); 
+        root1.left.left = new Tree(3); 
+        root1.left.right = new Tree(5); 
+        root1.right.right = new Tree(2); 
+        System.out.println();
+        System.out.println("check child sum property");
+        if(checkChildSumPropertyOfTree.childSumPropertyCheck(root1)) {
+        	System.out.println("Property true");
+        }
+
+		
 	}
 
 }
