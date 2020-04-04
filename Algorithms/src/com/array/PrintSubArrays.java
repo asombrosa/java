@@ -31,16 +31,12 @@ public class PrintSubArrays {
 	}
 
 	private void subsetUtil(int[] inputArray, Stack<Integer> subsets, int i) {
-		if (subsets.isEmpty()) {
-			;
-		} else {
+		if (!subsets.isEmpty()) {
 			System.out.println(subsets);
 		}
 		for (int index = i; index < inputArray.length; index++) {
 			subsets.push(inputArray[index]);
-
 			subsetUtil(inputArray, subsets, index + 1);
-
 			subsets.pop();
 		}
 	}
