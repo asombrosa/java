@@ -2,7 +2,7 @@ package com.array;
 
 import java.util.Stack;
 
-public class PrintSubArrays {
+public class PrintSubSets {
 
 	public static void main(String[] args) {
 		int inputArray[] = { 1, 2, 3, 4 };
@@ -21,7 +21,7 @@ public class PrintSubArrays {
 		// 3
 		// 3 4
 		// 4
-		PrintSubArrays printSubArrays = new PrintSubArrays();
+		PrintSubSets printSubArrays = new PrintSubSets();
 		printSubArrays.subsets(inputArray);
 	}
 
@@ -33,6 +33,7 @@ public class PrintSubArrays {
 	private void subsetUtil(int[] inputArray, Stack<Integer> subsets, int i) {
 		if (!subsets.isEmpty()) {
 			System.out.println(subsets);
+			//subsets = new Stack<Integer>();
 		}
 		for (int index = i; index < inputArray.length; index++) {
 			subsets.push(inputArray[index]);

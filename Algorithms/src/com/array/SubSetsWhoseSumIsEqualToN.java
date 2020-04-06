@@ -5,14 +5,14 @@ import java.util.Stack;
 //Java program to find number of subarrays 
 //with sum exactly equal to k. 
 
-public class SubArraysWhoseSumIsEqualToN {
+public class SubSetsWhoseSumIsEqualToN {
 	int result = 0;
 
 	public static void main(String[] args) {
 		//int inputArray[] = { 1, 2, 12, 12, 5, 3, 2, 13, 54, 6, 54, 6, 2, 4, 3 };
 		 int inputArray[] = { 10, 2, -2, -20, 10 };
 		int sum = -10;
-		SubArraysWhoseSumIsEqualToN subArraysWhoseSumIsEqualToN = new SubArraysWhoseSumIsEqualToN();
+		SubSetsWhoseSumIsEqualToN subArraysWhoseSumIsEqualToN = new SubSetsWhoseSumIsEqualToN();
 		subArraysWhoseSumIsEqualToN.findNoOfSubArrays(inputArray, sum);
 
 	}
