@@ -10,8 +10,8 @@ public class TopViewOfBinaryTree {
 		TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
 		int hd = 0;
 		getVerticalOrder(root, hd, map);
-		
-		for(Entry<Integer, Vector<Integer>> k : map.entrySet()) {
+
+		for (Entry<Integer, Vector<Integer>> k : map.entrySet()) {
 			System.out.print(k.getValue().get(0) + " ");
 		}
 	}

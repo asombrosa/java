@@ -27,7 +27,7 @@ public class SumOfArray {
 			return 0;
 		if (arr.length == 1)
 			return arr[0];
-		if(index < arr.length)
+		if (index < arr.length)
 			return arr[index] + sum(arr, index + 1);
 		return 0;
 	}

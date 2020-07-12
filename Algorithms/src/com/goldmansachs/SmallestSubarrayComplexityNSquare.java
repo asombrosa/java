@@ -5,7 +5,7 @@ package com.goldmansachs;
  *  that has sum atleast to a given sum.
  *  
  */
-public class SmallestSubarray {
+public class SmallestSubarrayComplexityNSquare {
 
 	public static void main(String[] args) {
 		/*

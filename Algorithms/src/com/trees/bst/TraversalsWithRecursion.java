@@ -38,8 +38,8 @@ public class TraversalsWithRecursion {
 			return;
 		}
 		if (height == 1)
-			System.out.print(root.val +" ");
-		else if(height > 1){
+			System.out.print(root.val + " ");
+		else if (height > 1) {
 			levelOrderTraversal(root.left, height - 1);
 			levelOrderTraversal(root.right, height - 1);
 		}
@@ -52,28 +52,28 @@ public class TraversalsWithRecursion {
 			System.out.println();
 		}
 	}
-	
+
 	void verticalOrderTraversal(Tree root, int hd, TreeMap<Integer, Vector<Integer>> map) {
-		if(root == null)
+		if (root == null)
 			return;
 		Vector<Integer> v = map.get(hd);
-		if(v == null) {
+		if (v == null) {
 			v = new Vector<Integer>();
 		}
 		v.add(root.val);
 		map.put(hd, v);
-		
-		verticalOrderTraversal(root.left, hd -1, map);
+
+		verticalOrderTraversal(root.left, hd - 1, map);
 		verticalOrderTraversal(root.right, hd + 1, map);
 	}
-	
+
 	void verticalOrder(Tree root) {
 		TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
 		int hd = 0;
 		verticalOrderTraversal(root, hd, map);
-		
-		for(Entry<Integer, Vector<Integer>> entry: map.entrySet())
+
+		for (Entry<Integer, Vector<Integer>> entry : map.entrySet())
 			System.out.println(entry.getValue());
-		
+
 	}
 }

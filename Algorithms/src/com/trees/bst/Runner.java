@@ -1,5 +1,11 @@
 package com.trees.bst;
-
+/*
+ * 			20
+ * 		  /   \
+ * 		 10    30
+ *       / \   / \
+ *      5  15 25 35
+ */
 public class Runner {
 
 	public static void main(String[] args) {

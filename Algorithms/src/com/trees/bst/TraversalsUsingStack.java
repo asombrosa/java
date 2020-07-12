@@ -37,12 +37,12 @@ public class TraversalsUsingStack {
 				stack.push(temp.left);
 		}
 	}
-	
+
 	void postorder(Tree root) {
-		if(root == null) {
+		if (root == null) {
 			return;
 		}
-		
+
 	}
 
 	private boolean stackNotEmpty(Stack<Tree> stack) {

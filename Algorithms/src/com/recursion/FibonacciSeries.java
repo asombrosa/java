@@ -1,4 +1,5 @@
 package com.recursion;
+
 /*
  * 0 		1 		1 2 3 5 8 13 
  * f(0) 	f(1)	f(2)
@@ -21,13 +22,14 @@ package com.recursion;
 public class FibonacciSeries {
 
 	public int fibonacci(int n) {
-		if(n == 0)
+		if (n == 0)
 			return 0;
-		if(n == 1)
+		if (n == 1)
 			return 1;
 		else
-			return fibonacci(n-1) + fibonacci(n-2);
+			return fibonacci(n - 1) + fibonacci(n - 2);
 	}
+
 	public static void main(String[] args) {
 		FibonacciSeries fibonacciSeries = new FibonacciSeries();
 		System.out.println(fibonacciSeries.fibonacci(3));

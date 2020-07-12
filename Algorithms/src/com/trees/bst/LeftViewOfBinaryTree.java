@@ -3,6 +3,7 @@ package com.trees.bst;
 public class LeftViewOfBinaryTree {
 
 	private static boolean value = true;
+
 	void leftView(Tree root) {
 		if (root == null) {
 			return;

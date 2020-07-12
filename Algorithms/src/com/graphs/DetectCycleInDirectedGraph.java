@@ -13,25 +13,25 @@ import java.util.List;
  */
 public class DetectCycleInDirectedGraph {
 
-	boolean isCyclic(int s,Graph g) {
+	boolean isCyclic(int s, Graph g) {
 		boolean visited[] = new boolean[g.V];
-		
-		for(int i=0;i<g.V;i++)
-			if(isCyclicUtil(i,visited,g))
+
+		for (int i = 0; i < g.V; i++)
+			if (isCyclicUtil(i, visited, g))
 				return true;
 		return false;
 	}
 
-	private boolean isCyclicUtil(int i, boolean[] visited,Graph g) {
-		
-		if(visited[i])
+	private boolean isCyclicUtil(int i, boolean[] visited, Graph g) {
+
+		if (visited[i])
 			return true;
-		visited[i]=true;
-		
+		visited[i] = true;
+
 		List<Integer> list = g.adj[i];
-		
-		for(Integer c: list)
-			if(isCyclicUtil(c, visited, g))
+
+		for (Integer c : list)
+			if (isCyclicUtil(c, visited, g))
 				return true;
 		visited[i] = false;
 		return false;
