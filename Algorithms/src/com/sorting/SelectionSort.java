@@ -1,13 +1,14 @@
 package com.sorting;
 
-public class BubbleSort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
-		//int unsortedArray[] = { 10, 2, 8, 6, 7, 3 };
+		 //int unsortedArray[] = { 10, 2, 8, 6, 7, 3 };
 		//int unsortedArray[] = { 10, 9, 8, 7, 6, 3 };
 		int unsortedArray[] = { 10, 2, 3, 4, 5, 6 };
 
 		sort(unsortedArray);
+
 	}
 
 	static int iterationCounter = 1;
@@ -29,18 +30,17 @@ public class BubbleSort {
 
 	public static void sort(int array[]) {
 		int length = array.length;
-		//for optimized version compare length till 1
-		//if 4 elements are sorted in an array of 5,
-		//obviously the last element is also sorted
-		while (length != 0) {
-			for (int indexOfFirstElement = 0; indexOfFirstElement < length - 1; indexOfFirstElement++) {
-				int indexOfSecondElement = indexOfFirstElement + 1;
-				if (array[indexOfFirstElement] > array[indexOfSecondElement]) {
-					swap(indexOfFirstElement, indexOfSecondElement, array);
+		for (int pointer = 0; pointer < length - 1; pointer++) {
+			int minimumElementIndex = pointer;
+			int minimumElement = array[pointer];
+			for (int j = pointer + 1; j < length; j++) {
+				if (minimumElement > array[j]) {
+					minimumElementIndex = j;
+					minimumElement = array[j];
 				}
 			}
+			swap(pointer, minimumElementIndex, array);
 			print(array);
-			length--;
 		}
 	}
 
