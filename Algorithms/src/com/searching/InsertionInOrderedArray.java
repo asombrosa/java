@@ -2,11 +2,9 @@ package com.searching;
 
 public class InsertionInOrderedArray {
     public static void main(String[] args) {
-        //int array[] ={3,7,20,32,45,52,60,75,0};
-        //int insertValue = 55;
-        //int array[] ={3,7,20,32,45,52,60,75,0};
-        //int insertValue = 80;
         int[] array = {3, 7, 20, 32, 45, 52, 60, 75, 0};
+        //int insertValue = 55;
+        //int insertValue = 80;
         int insertValue = 2;
         print(array);
         insert(array, insertValue);
