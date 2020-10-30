@@ -19,22 +19,24 @@ public class LinkedListRunner {
         linkedList.insertAtEnd(5);
         linkedList.insertAtPosition(3, 3);
         linkedList.insertAtPosition(6, 6);
-        linkedList.insertAtPosition(8, 8);
+        //linkedList.insertAtPosition(8, 8);
         linkedList.insertAtPosition(0, 1);
-        linkedList.insertAtPosition(-1, -1);
-        System.out.println(linkedList);
+        //linkedList.insertAtPosition(-1, -1);
+        //System.out.println(linkedList);
         //linkedList.deleteAtHead();
         //linkedList.deleteAtEnd();
-        linkedList.deleteAtPosition(-1);
+        //linkedList.deleteAtPosition(-1);
         //System.out.println(linkedList);
-        linkedList.deleteAtPosition(10);
+        //linkedList.deleteAtPosition(10);
         //System.out.println(linkedList);
         linkedList.deleteAtPosition(1);
         //System.out.println(linkedList);
-//        linkedList.deleteAtPosition(6);
-//        System.out.println(linkedList);
-//        linkedList.deleteAtPosition(3);
-//        System.out.println(linkedList);
+        //linkedList.deleteAtPosition(6);
+        //System.out.println(linkedList);
+        //linkedList.deleteAtPosition(3);
+        System.out.println(linkedList);
+        linkedList.search(5);
+        linkedList.search(-15);
         //System.out.println(linkedList.length());
     }
 }

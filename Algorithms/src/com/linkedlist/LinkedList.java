@@ -94,6 +94,20 @@ public class LinkedList {
         }
     }
 
+    public void search(int value) {
+        Node current = this.head;
+        while (current != null) {
+            if (current.data == value) {
+                System.out.println("Element found in linked list : " + value);
+                break;
+            }
+            current = current.getNextNode();
+        }
+        if (current == null) {
+            System.out.println("Element not found : " + value);
+        }
+    }
+
     public int length() {
         int length = 0;
         Node current = this.head;
