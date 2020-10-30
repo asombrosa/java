@@ -23,6 +23,18 @@ public class LinkedListRunner {
         linkedList.insertAtPosition(0, 1);
         linkedList.insertAtPosition(-1, -1);
         System.out.println(linkedList);
+        //linkedList.deleteAtHead();
+        //linkedList.deleteAtEnd();
+        linkedList.deleteAtPosition(-1);
+        //System.out.println(linkedList);
+        linkedList.deleteAtPosition(10);
+        //System.out.println(linkedList);
+        linkedList.deleteAtPosition(1);
+        //System.out.println(linkedList);
+//        linkedList.deleteAtPosition(6);
+//        System.out.println(linkedList);
+//        linkedList.deleteAtPosition(3);
+//        System.out.println(linkedList);
         //System.out.println(linkedList.length());
     }
 }
