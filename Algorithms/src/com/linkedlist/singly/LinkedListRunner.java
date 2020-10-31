@@ -1,4 +1,6 @@
-package com.linkedlist;
+package com.linkedlist.singly;
+
+import com.linkedlist.singly.LinkedList;
 
 public class LinkedListRunner {
     public static void main(String[] args) {

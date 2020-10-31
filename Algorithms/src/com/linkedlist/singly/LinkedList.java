@@ -1,4 +1,4 @@
-package com.linkedlist;
+package com.linkedlist.singly;
 
 public class LinkedList {
     private Node head;
@@ -97,7 +97,7 @@ public class LinkedList {
     public void search(int value) {
         Node current = this.head;
         while (current != null) {
-            if (current.data == value) {
+            if (current.getData() == value) {
                 System.out.println("Element found in linked list : " + value);
                 break;
             }

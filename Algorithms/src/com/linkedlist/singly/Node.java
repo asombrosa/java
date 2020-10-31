@@ -1,10 +1,10 @@
-package com.linkedlist;
+package com.linkedlist.singly;
 
 public class Node {
     int data;
     Node nextNode;
 
-    Node(int data) {
+    public Node(int data) {
         this.data = data;
     }
 
