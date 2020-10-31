@@ -1,9 +1,9 @@
 package com.linkedlist.doubly;
 
 public class Node {
-    int data;
-    Node nextNode;
-    Node previousNode;
+    private int data;
+    private Node nextNode;
+    private Node previousNode;
 
     public Node(int data) {
         this.data = data;

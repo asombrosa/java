@@ -48,6 +48,20 @@ public class LinkedList {
         }
     }
 
+    public void insertDataInSortedManner(int data) {
+        if (this.head == null) {
+            insertAtHead(data);
+            return;
+        }
+        int position = 1;
+        Node current = this.head;
+        while (current != null && current.getData() < data) {
+            current = current.getNextNode();
+            position += 1;
+        }
+        insertAtPosition(data, position);
+    }
+
     public void deleteAtHead() {
         Node current = this.head;
         current = current.getNextNode();

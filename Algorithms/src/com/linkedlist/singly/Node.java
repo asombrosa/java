@@ -1,8 +1,8 @@
 package com.linkedlist.singly;
 
 public class Node {
-    int data;
-    Node nextNode;
+    private int data;
+    private Node nextNode;
 
     public Node(int data) {
         this.data = data;
