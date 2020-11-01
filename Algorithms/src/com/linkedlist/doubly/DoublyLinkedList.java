@@ -4,12 +4,34 @@ public class DoublyLinkedList {
     private Node head;
     private Node tail;
 
+    public Node getHead() {
+        return head;
+    }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
     public void insertAtHead(int data) {
         Node newNode = new Node(data);
-        newNode.setNextNode(this.tail);
-        newNode.setPreviousNode(this.head);
-        this.head = newNode;
-        this.tail = newNode;
+        newNode.setPreviousNode(null);
+        if (this.head == null) {
+            newNode.setNextNode(null);
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.setNextNode(this.head);
+            this.head.setPreviousNode(newNode);
+            this.head = newNode;
+        }
     }
 
     public void insertAtTail(int data) {
@@ -27,24 +49,21 @@ public class DoublyLinkedList {
         }
     }
 
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder("{");
-        Node current = this.head;
-        while (current != null) {
-            result.append(current.toString()).append(",");
-            current = current.getNextNode();
+    public void print() {
+        Node head = this.getHead();
+        while (head != null) {
+            System.out.print(head.getData() + " ");
+            head = head.getNextNode();
         }
-        result.deleteCharAt(result.length() - 1);
-        result.append("}");
-        result.append(",\n");
-        current = this.tail;
-        while (current != null) {
-            result.append(current.toString()).append(",");
-            current = current.getPreviousNode();
+        System.out.println();
+    }
+
+    public void reversePrint() {
+        Node tail = this.getTail();
+        while (tail != null) {
+            System.out.print(tail.getData() + " ");
+            tail = tail.getPreviousNode();
         }
-        result.deleteCharAt(result.length() - 1);
-        result.append("}");
-        return result.toString();
+        System.out.println();
     }
 }
