@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StacksUsingArray {
 
     private int top;
-    private int[] stack;
+    private final int[] stack;
 
     public StacksUsingArray(int maxSizeOfStack) {
         top = -1;
