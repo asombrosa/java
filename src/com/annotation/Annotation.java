@@ -12,7 +12,7 @@ class Derived extends Base {
         System.out.println("Derived display(int )");
     }
 
-   /* @Override
+/*    @Override
     public void invalid(){
         System.out.println("invalid");
     }*/
