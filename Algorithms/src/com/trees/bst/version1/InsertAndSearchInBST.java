@@ -1,4 +1,4 @@
-package com.trees.bst;
+package com.trees.bst.version1;
 
 public class InsertAndSearchInBST {
 	Tree insert(int v, Tree root) {
