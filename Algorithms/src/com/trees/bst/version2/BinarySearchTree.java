@@ -3,6 +3,20 @@ package com.trees.bst.version2;
 public class BinarySearchTree {
     private TreeNode root;
 
+    public Integer smallest() {
+        if (this.root != null) {
+            return root.smallest();
+        }
+        return null;
+    }
+
+    public Integer greatest() {
+        if (this.root != null) {
+            return root.greatest();
+        }
+        return null;
+    }
+
     public void insert(Integer data) {
         if (root == null) {
             this.root = new TreeNode(data);

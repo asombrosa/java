@@ -57,4 +57,18 @@ public class TreeNode {
             }
         }
     }
+
+    public Integer smallest() {
+        if (this.leftChild == null) {
+            return this.data;
+        }
+        return this.leftChild.smallest();
+    }
+
+    public Integer greatest() {
+        if (this.rightChild == null) {
+            return this.data;
+        }
+        return this.rightChild.greatest();
+    }
 }
