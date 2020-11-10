@@ -3,24 +3,24 @@ package com.graphs;
 import java.util.LinkedList;
 
 /*
- * 
+ *
  * Adjacency Linked List
- * 
+ *
  */
 public class Graph {
 
-	int V;
-	LinkedList<Integer> adj[];
+    int value;
+    LinkedList<Integer> adj[];
 
-	Graph(int v) {
-		V = v;
-		adj = new LinkedList[v];
-		for (int i = 0; i < v; i++) {
-			adj[i] = new LinkedList<Integer>();
-		}
-	}
+    Graph(int value) {
+        this.value = value;
+        adj = new LinkedList[value];
+        for (int index = 0; index < value; index++) {
+            adj[index] = new LinkedList<Integer>();
+        }
+    }
 
-	void addEdge(int source, int destination) {
-		adj[source].add(destination);
-	}
+    void addEdge(int source, int destination) {
+        adj[source].add(destination);
+    }
 }
