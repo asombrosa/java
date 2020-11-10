@@ -4,48 +4,48 @@ import java.util.Stack;
 
 public class TraversalsUsingStack {
 
-	void inorder(Tree root) {
+	void inorder(Node root) {
 		if (root == null) {
 			return;
 		}
-		Stack<Tree> stack = new Stack<Tree>();
-		Tree element = root;
+		Stack<Node> stack = new Stack<Node>();
+		Node element = root;
 		while (element != null || stackNotEmpty(stack)) {
 			while (element != null) {
 				stack.push(element);
-				element = element.left;
+				element = element.leftChild;
 			}
 			element = stack.pop();
-			System.out.print(element.val + " ");
-			element = element.right;
+			System.out.print(element.value + " ");
+			element = element.rightChild;
 
 		}
 	}
 
-	void preorder(Tree root) {
+	void preorder(Node root) {
 		if (root == null) {
 			return;
 		}
-		Stack<Tree> stack = new Stack<Tree>();
+		Stack<Node> stack = new Stack<Node>();
 		stack.push(root);
 		while (stackNotEmpty(stack)) {
-			Tree temp = stack.pop();
-			System.out.print(temp.val + " ");
-			if (temp.right != null)
-				stack.push(temp.right);
-			if (temp.left != null)
-				stack.push(temp.left);
+			Node temp = stack.pop();
+			System.out.print(temp.value + " ");
+			if (temp.rightChild != null)
+				stack.push(temp.rightChild);
+			if (temp.leftChild != null)
+				stack.push(temp.leftChild);
 		}
 	}
 
-	void postorder(Tree root) {
+	void postorder(Node root) {
 		if (root == null) {
 			return;
 		}
 
 	}
 
-	private boolean stackNotEmpty(Stack<Tree> stack) {
+	private boolean stackNotEmpty(Stack<Node> stack) {
 		return !stack.isEmpty();
 	}
 }

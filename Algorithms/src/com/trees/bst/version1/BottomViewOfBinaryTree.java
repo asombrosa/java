@@ -5,32 +5,29 @@ import java.util.TreeMap;
 import java.util.Vector;
 
 public class BottomViewOfBinaryTree {
-	
-	void bottomView(Tree root) {
-		TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
-		int hd = 0;
-		getVerticalOrder(root,hd,map);
-		
-		for(Entry<Integer, Vector<Integer>> entry: map.entrySet()) {
-			System.out.print(entry.getValue().get(entry.getValue().size() - 1) + " ");
-		}
-	}
 
-	private void getVerticalOrder(Tree root, int hd, TreeMap<Integer, Vector<Integer>> map) {
-		if(root == null) {
-			return;
-		}
-		
-		Vector<Integer> v = map.get(hd);
-		
-		if(v == null) {
-			v = new Vector<Integer>();
-		}
-		v.add(root.val);
-		map.put(hd, v);
-		
-		getVerticalOrder(root.left, hd - 1, map);
-		getVerticalOrder(root.right, hd + 1, map);
-	}
+    void bottomView(Node root) {
+        TreeMap<Integer, Vector<Integer>> map = new TreeMap<>();
+        int hd = 0;
+        getVerticalOrder(root, hd, map);
 
+        for (Entry<Integer, Vector<Integer>> entry : map.entrySet()) {
+            System.out.print(entry.getValue().get(entry.getValue().size() - 1) + " ");
+        }
+    }
+
+    private void getVerticalOrder(Node root, int horizontalDistance, TreeMap<Integer, Vector<Integer>> map) {
+        if (root == null) {
+            return;
+        }
+        Vector<Integer> vector = map.get(horizontalDistance);
+        if (vector == null) {
+            vector = new Vector<>();
+        }
+        vector.add(root.value);
+        map.put(horizontalDistance, vector);
+
+        getVerticalOrder(root.leftChild, horizontalDistance - 1, map);
+        getVerticalOrder(root.rightChild, horizontalDistance + 1, map);
+    }
 }

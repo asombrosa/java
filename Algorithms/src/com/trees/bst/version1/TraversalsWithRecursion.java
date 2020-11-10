@@ -6,74 +6,73 @@ import java.util.Vector;
 
 public class TraversalsWithRecursion {
 
-	void inorder(Tree root) {
-		if (root == null) {
-			return;
-		}
-		inorder(root.left);
-		System.out.print(root.val + " ");
-		inorder(root.right);
-	}
+    void inorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.leftChild);
+        System.out.print(root.value + " ");
+        inorder(root.rightChild);
+    }
 
-	void postorder(Tree root) {
-		if (root == null) {
-			return;
-		}
-		postorder(root.left);
-		postorder(root.right);
-		System.out.print(root.val + " ");
-	}
+    void postorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        postorder(root.leftChild);
+        postorder(root.rightChild);
+        System.out.print(root.value + " ");
+    }
 
-	void preorder(Tree root) {
-		if (root == null) {
-			return;
-		}
-		System.out.print(root.val + " ");
-		preorder(root.left);
-		preorder(root.right);
-	}
+    void preorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.value + " ");
+        preorder(root.leftChild);
+        preorder(root.rightChild);
+    }
 
-	void levelOrderTraversal(Tree root, int height) {
-		if (root == null) {
-			return;
-		}
-		if (height == 1)
-			System.out.print(root.val + " ");
-		else if (height > 1) {
-			levelOrderTraversal(root.left, height - 1);
-			levelOrderTraversal(root.right, height - 1);
-		}
-	}
+    void levelOrderTraversal(Node root, int height) {
+        if (root == null) {
+            return;
+        }
+        if (height == 1) {
+            System.out.print(root.value + " ");
+        } else if (height > 1) {
+            levelOrderTraversal(root.leftChild, height - 1);
+            levelOrderTraversal(root.rightChild, height - 1);
+        }
+    }
 
-	void levelOrder(Tree root) {
-		int height = Height.calculateHeight(root);
-		for (int i = 1; i <= height; i++) {
-			levelOrderTraversal(root, i);
-			System.out.println();
-		}
-	}
+    void levelOrder(Node root) {
+        int height = Height.calculateHeight(root);
+        for (int index = 1; index <= height; index++) {
+            levelOrderTraversal(root, index);
+            System.out.println();
+        }
+    }
 
-	void verticalOrderTraversal(Tree root, int hd, TreeMap<Integer, Vector<Integer>> map) {
-		if (root == null)
-			return;
-		Vector<Integer> v = map.get(hd);
-		if (v == null) {
-			v = new Vector<Integer>();
-		}
-		v.add(root.val);
-		map.put(hd, v);
+    void verticalOrderTraversal(Node root, int horizontalDistance, TreeMap<Integer, Vector<Integer>> map) {
+        if (root == null)
+            return;
+        Vector<Integer> vector = map.get(horizontalDistance);
+        if (vector == null) {
+            vector = new Vector<>();
+        }
+        vector.add(root.value);
+        map.put(horizontalDistance, vector);
 
-		verticalOrderTraversal(root.left, hd - 1, map);
-		verticalOrderTraversal(root.right, hd + 1, map);
-	}
+        verticalOrderTraversal(root.leftChild, horizontalDistance - 1, map);
+        verticalOrderTraversal(root.rightChild, horizontalDistance + 1, map);
+    }
 
-	void verticalOrder(Tree root) {
-		TreeMap<Integer, Vector<Integer>> map = new TreeMap<Integer, Vector<Integer>>();
-		int hd = 0;
-		verticalOrderTraversal(root, hd, map);
+    void verticalOrder(Node root) {
+        TreeMap<Integer, Vector<Integer>> map = new TreeMap<>();
+        int horizontalDistance = 0;
+        verticalOrderTraversal(root, horizontalDistance, map);
 
-		for (Entry<Integer, Vector<Integer>> entry : map.entrySet())
-			System.out.println(entry.getValue());
-
-	}
+        for (Entry<Integer, Vector<Integer>> entry : map.entrySet())
+            System.out.println(entry.getValue());
+    }
 }

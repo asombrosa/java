@@ -2,40 +2,39 @@ package com.trees.bst.version1;
 
 public class CheckChildSumPropertyOfTree {
 
-	boolean isChildrenSumProperty = true;
-	int sum = 0;
+    boolean isChildrenSumProperty = true;
+    int sum = 0;
 
-	boolean childSumPropertyCheck(Tree root) {
-		if (root == null)
-			return isChildrenSumProperty;
-		int height = Height.calculateHeight(root);
-		isChildrenSumProperty = true;
-		for (int i = 1; i <= height; i++) {
-			levelOrderTraversal(root, i);
-		}
-		return isChildrenSumProperty;
-	}
+    boolean childSumPropertyCheck(Node root) {
+        if (root == null)
+            return isChildrenSumProperty;
+        int height = Height.calculateHeight(root);
+        isChildrenSumProperty = true;
+        for (int index = 1; index <= height; index++) {
+            levelOrderTraversal(root, index);
+        }
+        return isChildrenSumProperty;
+    }
 
-	private void levelOrderTraversal(Tree root, int i) {
-		if (root == null) {
-			return;
-		}
+    private void levelOrderTraversal(Node root, int index) {
+        if (root == null) {
+            return;
+        }
 
-		if (i == 1) {
-			sum = 0;
-			if (root.right != null) {
-				sum = sum + root.right.val;
-			}
-			if (root.left != null) {
-				sum = sum + root.left.val;
-			}
-			if ((root.right != null || root.left != null) && sum != root.val) {
-				isChildrenSumProperty = false;
-				return;
-			}
-		} else if (i > 1) {
-			levelOrderTraversal(root.left, i - 1);
-			levelOrderTraversal(root.right, i - 1);
-		}
-	}
+        if (index == 1) {
+            sum = 0;
+            if (root.rightChild != null) {
+                sum = sum + root.rightChild.value;
+            }
+            if (root.leftChild != null) {
+                sum = sum + root.leftChild.value;
+            }
+            if ((root.rightChild != null || root.leftChild != null) && sum != root.value) {
+                isChildrenSumProperty = false;
+            }
+        } else if (index > 1) {
+            levelOrderTraversal(root.leftChild, index - 1);
+            levelOrderTraversal(root.rightChild, index - 1);
+        }
+    }
 }

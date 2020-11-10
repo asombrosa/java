@@ -4,33 +4,27 @@ public class LeftViewOfBinaryTree {
 
 	private static boolean value = true;
 
-	void leftView(Tree root) {
+	void leftView(Node root) {
 		if (root == null) {
 			return;
 		}
-
 		int height = Height.calculateHeight(root);
-
-		for (int i = 1; i <= height; i++) {
+		for (int index = 1; index <= height; index++) {
 			value = true;
-			printFirstElementOfLevelOrderTraversal(root, i);
+			printFirstElementOfLevelOrderTraversal(root, index);
 			System.out.println();
 		}
-
 	}
 
-	void printFirstElementOfLevelOrderTraversal(Tree root, int h) {
+	void printFirstElementOfLevelOrderTraversal(Node root, int height) {
 		if (root == null)
 			return;
-
-		if (h == 1 && value) {
-			System.out.print(root.val + " ");
+		if (height == 1 && value) {
+			System.out.print(root.value + " ");
 			value = false;
 		} else {
-			printFirstElementOfLevelOrderTraversal(root.left, h - 1);
-			printFirstElementOfLevelOrderTraversal(root.right, h - 1);
+			printFirstElementOfLevelOrderTraversal(root.leftChild, height - 1);
+			printFirstElementOfLevelOrderTraversal(root.rightChild, height - 1);
 		}
-
 	}
-
 }
