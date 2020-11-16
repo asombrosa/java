@@ -1,4 +1,4 @@
-package com.behavioral.design.pattern.strategy.start;
+package com.behavioral.design.pattern.strategy;
 
 public class BasicCameraApp extends PhoneCameraApp {
     public void edit() {

@@ -1,4 +1,4 @@
-package com.behavioral.design.pattern.strategy.start;
+package com.behavioral.design.pattern.strategy;
 
 import java.util.Scanner;
 
