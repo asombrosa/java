@@ -1,4 +1,4 @@
-package com.behavioral.design.pattern.strategy;
+package com.design.pattern.behavioral.strategy;
 
 public class Email implements ShareStrategy {
     public void share() {

@@ -1,4 +1,4 @@
-package com.behavioral.design.pattern.strategy;
+package com.design.pattern.behavioral.strategy;
 
 public abstract class PhoneCameraApp {
     ShareStrategy shareStrategy;
