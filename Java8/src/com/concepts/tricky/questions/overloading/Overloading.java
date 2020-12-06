@@ -1,4 +1,4 @@
-package com.concepts.tricky.questions;
+package com.concepts.tricky.questions.overloading;
 
 public class Overloading {
     public static void main(String[] args) {

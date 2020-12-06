@@ -1,4 +1,4 @@
-package com.concepts.tricky.questions;
+package com.concepts.tricky.questions.floatsAndIntegers;
 
 public class UsingLForLong {
     /*
