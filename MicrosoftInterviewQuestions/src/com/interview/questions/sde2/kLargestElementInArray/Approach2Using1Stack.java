@@ -6,6 +6,8 @@ import java.util.Stack;
 For example, if given array is [1, 23, 12, 9, 30, 2, 50]
 and you are asked for the largest 3 elements i.e., k = 3
 then your program should print 50, 30 and 23.
+
+Time complexity : n * (n + 1)
  */
 public class Approach2Using1Stack {
     public static void main(String[] args) {
