@@ -20,6 +20,8 @@ public class Approach4UsingMinHeap {
 
     private static void printKLargestNumbers(int[] array, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        //It behaves like min heap
+        //i.e parent should be small than its children
         for (int i = 0; i < k; i++) {
             minHeap.add(array[i]);
         }
