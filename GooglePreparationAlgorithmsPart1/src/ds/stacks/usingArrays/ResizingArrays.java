@@ -1,4 +1,4 @@
-package ds.arrays;
+package ds.stacks.usingArrays;
 
 public class ResizingArrays {
     String[] array = new String[1];
