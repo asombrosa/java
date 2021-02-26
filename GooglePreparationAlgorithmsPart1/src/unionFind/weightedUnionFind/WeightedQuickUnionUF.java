@@ -1,4 +1,4 @@
-package weightedUnionFind.quickUnion;
+package unionFind.weightedUnionFind;
 
 public class WeightedQuickUnionUF {
     int[] id;

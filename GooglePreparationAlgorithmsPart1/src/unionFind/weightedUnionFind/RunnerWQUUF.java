@@ -1,4 +1,4 @@
-package weightedUnionFind.quickUnion;
+package unionFind.weightedUnionFind;
 
 public class RunnerWQUUF {
     public static void main(String[] args) {
