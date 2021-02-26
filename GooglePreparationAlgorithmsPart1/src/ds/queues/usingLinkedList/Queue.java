@@ -13,26 +13,22 @@ public class Queue {
         if (head == null) {
             return "";
         }
-        Node temp = head.next;
+        Node temp = head;
         String item = temp.data;
         head = head.next;
-        temp = null;
         return item;
     }
 
     public void enqueue(String data){
         Node temp = new Node();
         temp.data = data;
+        temp.next = null;
         if(head == null){
             head = temp;
             tail = temp;
             return;
         }
-        Node cursor = head;
-        while(cursor.next != null){
-            cursor = cursor.next;
-        }
-        cursor.next = temp;
+        tail.next = temp;
         tail = temp;
     }
 
