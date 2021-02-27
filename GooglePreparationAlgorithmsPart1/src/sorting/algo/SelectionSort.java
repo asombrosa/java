@@ -2,6 +2,11 @@ package sorting.algo;
 import sorting.Sortable;
 import sorting.Item;
 
+/*
+start i from 0
+find min replace with i
+increment i
+ */
 public class SelectionSort implements Sortable {
     @Override
     public void sort(Comparable[] a){

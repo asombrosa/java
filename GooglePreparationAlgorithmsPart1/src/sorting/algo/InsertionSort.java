@@ -3,6 +3,15 @@ package sorting.algo;
 import sorting.Sortable;
 import sorting.Item;
 
+/*
+start from 1st
+go to next
+place the next so that left array is sorted
+move to next
+place it in the correct position
+..
+continue
+ */
 public class InsertionSort implements Sortable {
     @Override
     public void sort(Comparable[] a) {
