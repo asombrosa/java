@@ -1,14 +1,15 @@
 package sorting.algo;
 
-import sorting.Sortable;
 import sorting.Item;
+import sorting.Sortable;
+
 /*
 h sort
 insertion sort in h passes
  */
 public class ShellSort implements Sortable {
 
-    public void sort(Comparable[] a) {
+    public <T extends Comparable<T>> void sort(T[] a) {
         int h = 1;
         while (h < a.length) {
             h = 3 * h + 1;
@@ -24,7 +25,7 @@ public class ShellSort implements Sortable {
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Item item1 = new Item.ItemBuilder(34, "ABC").build();
         Item item2 = new Item.ItemBuilder(13, "ABC").build();
         Item item3 = new Item.ItemBuilder(14, "ABC").build();
@@ -42,8 +43,8 @@ public class ShellSort implements Sortable {
         Item item15 = new Item.ItemBuilder(56, "ABC").build();
 
         ShellSort algo = new ShellSort();
-        Comparable[] array = {item1,item2,item3,item4,item5,item6,item7,item8,item9,item10,item11,
-                item12,item13,item14,item15};
+        Item[] array = {item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11,
+        item12, item13, item14, item15};
         algo.sort(array);
         System.out.println(algo.toString(array));
 

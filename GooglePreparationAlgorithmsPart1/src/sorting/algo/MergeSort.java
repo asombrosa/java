@@ -1,15 +1,15 @@
 package sorting.algo;
 
-import sorting.Sortable;
 import sorting.Item;
+import sorting.Sortable;
 
 /*
 1 2 3 4 5 6 7
  */
 public class MergeSort implements Sortable {
 
-    public void merge(Comparable[] array, Comparable[] aux, int low, int mid, int high) {
-        int index = low;
+    public <T extends Comparable<T>> void merge(T[] array, T[] aux, int low, int mid, int high) {
+        int index;
         for (index = low; index <= high; index++) {
             aux[index] = array[index];
         }
@@ -28,7 +28,7 @@ public class MergeSort implements Sortable {
         }
     }
 
-    public void sort(Comparable[] array, Comparable[] aux, int low, int high) {
+    public <T extends Comparable<T>> void sort(T[] array, T[] aux, int low, int high) {
         if (high <= low) {
             return;
         }
@@ -39,8 +39,8 @@ public class MergeSort implements Sortable {
 
     }
 
-    public void sort(Comparable[] array) {
-        Comparable[] aux = new Comparable[array.length];
+    public <T extends Comparable<T>> void sort(T[] array) {
+        T[] aux = array.clone();
         sort(array, aux, 0, array.length - 1);
     }
 
@@ -56,7 +56,7 @@ public class MergeSort implements Sortable {
         Item item9 = new Item.ItemBuilder(11111111, "A").build();
 
         MergeSort algo = new MergeSort();
-        Comparable[] array = {item1,item2,item3,item4,item5,item6,item7,item8,item9};
+        Item[] array = new Item[]{item1, item2, item3, item4, item5, item6, item7, item8, item9};
         algo.sort(array);
         System.out.println(algo.toString(array));
 

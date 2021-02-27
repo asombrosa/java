@@ -18,7 +18,7 @@ continue
  */
 public class InsertionSort implements Sortable {
     @Override
-    public void sort(Comparable[] a) {
+    public <T extends Comparable<T>> void sort(T[] a) {
         for (int outerLoopCounter = 0; outerLoopCounter < a.length; outerLoopCounter++) {
             for (int innerLoopCounter = outerLoopCounter; innerLoopCounter > 0; innerLoopCounter--) {
                 if (less(a[innerLoopCounter], a[innerLoopCounter - 1])) {
@@ -30,7 +30,7 @@ public class InsertionSort implements Sortable {
         }
     }
 
-    public void sort(Comparable[] a, Comparator c) {
+    public void sort(Item[] a, Comparator c) {
         for (int outerLoopCounter = 0; outerLoopCounter < a.length; outerLoopCounter++) {
             for (int innerLoopCounter = outerLoopCounter; innerLoopCounter > 0; innerLoopCounter--) {
                 if (less(c, a[innerLoopCounter], a[innerLoopCounter - 1])) {
@@ -51,13 +51,13 @@ public class InsertionSort implements Sortable {
         Item item6 = new Item.ItemBuilder(14, "Fish").build();
 
         InsertionSort algo = new InsertionSort();
-        Comparable[] array = {item1, item2, item3, item4, item5, item6};
+        Item[] array = {item1, item2, item3, item4, item5, item6};
         algo.sort(array);
         System.out.println(algo.toString(array));
-        array = new Comparable[]{item1, item2, item3, item4, item5, item6};
+        array = new Item[]{item1, item2, item3, item4, item5, item6};
         algo.sort(array, new ComparatorUsingItemNumber());
         System.out.println(algo.toString(array));
-        array = new Comparable[]{item1, item2, item3, item4, item5, item6};
+        array = new Item[]{item1, item2, item3, item4, item5, item6};
         algo.sort(array, new ComparatorUsingItemName());
         System.out.println(algo.toString(array));
 

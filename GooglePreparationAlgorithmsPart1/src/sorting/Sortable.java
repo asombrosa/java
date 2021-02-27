@@ -1,13 +1,12 @@
 package sorting;
 
 import java.util.Comparator;
-import java.util.Objects;
 
 @FunctionalInterface
 public interface Sortable {
-    public abstract void sort(Comparable[] a);
+    <T extends Comparable<T>> void sort(T[] a);
 
-    default boolean less(Comparable one, Comparable two) {
+    default <T extends Comparable<T>> boolean less(T one, T two) {
         return one.compareTo(two) < 0;
     }
 
@@ -15,21 +14,15 @@ public interface Sortable {
         return c.compare(one, two)  < 0;
     }
 
-    default void exchange(Comparable[] array, int index1, int index2) {
-        Comparable value = array[index1];
+    default <T extends Comparable<T>>void exchange(T[] array, int index1, int index2) {
+        T value = array[index1];
         array[index1] = array[index2];
         array[index2] = value;
     }
 
-    default void exchange(Objects[] array, int index1, int index2) {
-        Objects value = array[index1];
-        array[index1] = array[index2];
-        array[index2] =  value;
-    }
-
-    default String toString(Comparable[] array) {
+    default <T extends Comparable<T>> String toString(T[] array) {
         StringBuilder string = new StringBuilder();
-        for (Comparable a : array) {
+        for (T a : array) {
             string.append(a).append(" ");
         }
         string.append("\n");
