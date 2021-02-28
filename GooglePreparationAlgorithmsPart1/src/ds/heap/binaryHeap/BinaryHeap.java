@@ -22,32 +22,32 @@ public class BinaryHeap {
     }
 
     private void swim(int k) {
-        while(k > 0 && less(heap[(k -1)/2],heap[k])){
-            exchange((k-1)/2,k);
-            k = k/2;
+        while (k > 0 && less(heap[(k - 1) / 2], heap[k])) {
+            exchange((k - 1) / 2, k);
+            k = (k - 1) / 2;
         }
     }
 
-    private void sink(int k){
-        while(2*k < heap.length){
-            int j = 2*k + 1;
-            if(j < heap.length - 1 && less(heap[j],heap[j+1])){
+    private void sink(int k) {
+        while (2 * k < heap.length) {
+            int j = 2 * k + 1;
+            if (j < heap.length - 1 && less(heap[j], heap[j + 1])) {
                 j++;
             }
-            if(!less(k,j)){
+            if (!less(k, j)) {
                 break;
             }
-            exchange(j,k);
+            exchange(j, k);
             k = j;
         }
     }
 
-    public void insert(int value){
+    public void insert(int value) {
         heap[counter] = value;
         swim(counter++);
     }
 
-    public void delete(){
+    public void delete() {
         heap[0] = heap[counter];
         heap[counter--] = 0;
         sink(0);
@@ -68,7 +68,7 @@ public class BinaryHeap {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder string = new StringBuilder();
         Arrays.stream(heap).filter(e -> e != 0).forEach(e -> string.append(e).append(" "));
         return string.toString();
