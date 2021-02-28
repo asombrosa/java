@@ -1,4 +1,4 @@
-package ds.symbolTables;
+package ds.symbolTables.usingArrays;
 
 public class SymbolTableElement<K extends Comparable<K>, V extends Comparable<V>> implements Comparable<K> {
     K key;

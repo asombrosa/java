@@ -1,4 +1,4 @@
-package ds.symbolTables;
+package ds.symbolTables.usingArrays;
 
 import java.util.Arrays;
 
