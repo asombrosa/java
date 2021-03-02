@@ -3,10 +3,10 @@ package ds.directed.graph;
 import ds.graphs.Bag;
 
 public class DirectedGraph {
-    Bag<Integer> adj[];
+    Bag<Integer>[] adj;
     int v;
 
-    DirectedGraph(int v) {
+    public DirectedGraph(int v) {
         this.v = v;
         adj = new Bag[v];
         for (int i = 0; i < v; i++) {
