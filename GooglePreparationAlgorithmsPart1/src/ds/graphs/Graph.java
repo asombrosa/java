@@ -21,6 +21,10 @@ public class Graph {
         return adj[v];
     }
 
+    public int getVertices() {
+        return vertices;
+    }
+
     public void print() {
         for (int v = 0; v < 10; v++) {
             for (int w : adj(v)) {
