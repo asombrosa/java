@@ -8,7 +8,7 @@ public class TopologicalOrder {
     boolean[] marked;
     Stack<Integer> stack;
 
-    TopologicalOrder(DirectedGraph graph) {
+    public TopologicalOrder(DirectedGraph graph) {
         stack = new Stack<>();
         marked = new boolean[graph.getVertices()];
         for (int i = 0; i < graph.getVertices(); i++) {
