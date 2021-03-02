@@ -27,7 +27,7 @@ public class DirectedGraph {
     }
 
     public void print() {
-        for (int v = 0; v < 10; v++) {
+        for (int v = 0; v < this.v; v++) {
             for (int w : adj(v)) {
                 System.out.println(v + " => " + w);
             }
