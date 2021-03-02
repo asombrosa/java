@@ -6,7 +6,7 @@ public class Graph {
 
     public Graph(int vertices) {
         this.vertices = vertices;
-        adj = (Bag<Integer>[]) new Bag[vertices];
+        adj = new Bag[vertices];
         for (int i = 0; i < vertices; i++) {
             adj[i] = new Bag<>();
         }
