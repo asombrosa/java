@@ -1,7 +1,5 @@
 package ds.symbolTables.usingRedBlackTrees;
 
-import ds.symbolTables.usingBST.BST;
-
 public class Runner {
     public static void main(String[] args) {
         RedBlackTree<Integer, Integer> bst = new RedBlackTree<>();

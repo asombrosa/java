@@ -30,7 +30,7 @@ public class Stack {
         StringBuilder stringBuilder = new StringBuilder();
         Node temp = head;
         while(temp != null){
-            stringBuilder.append(temp.data + " ");
+            stringBuilder.append(temp.data).append(" ");
             temp = temp.next;
         }
         stringBuilder.append("\n");

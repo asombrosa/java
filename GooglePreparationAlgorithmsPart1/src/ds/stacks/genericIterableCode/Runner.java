@@ -1,7 +1,6 @@
 package ds.stacks.genericIterableCode;
 
 import java.util.Iterator;
-import java.util.ListIterator;
 
 public class Runner{
     public static void main(String[]args){

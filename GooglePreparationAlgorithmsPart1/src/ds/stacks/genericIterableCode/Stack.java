@@ -28,7 +28,7 @@ public class Stack<S> implements Iterable<String> {
         }
     }
 
-    public class Node {
+    public static class Node {
         String data;
         Node next;
     }
