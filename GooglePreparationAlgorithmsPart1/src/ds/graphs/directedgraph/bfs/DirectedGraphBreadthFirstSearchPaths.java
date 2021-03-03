@@ -1,6 +1,6 @@
-package ds.directed.graph.bfs;
+package ds.graphs.directedgraph.bfs;
 
-import ds.directed.graph.DirectedGraph;
+import ds.graphs.directedgraph.DirectedGraph;
 
 import java.util.LinkedList;
 import java.util.Queue;

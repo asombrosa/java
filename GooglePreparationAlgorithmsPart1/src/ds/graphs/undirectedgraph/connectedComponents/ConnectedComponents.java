@@ -1,6 +1,6 @@
-package ds.graphs.connectedComponents;
+package ds.graphs.undirectedgraph.connectedComponents;
 
-import ds.graphs.Graph;
+import ds.graphs.undirectedgraph.Graph;
 
 public class ConnectedComponents {
     boolean[] marked;

@@ -1,7 +1,6 @@
-package ds.graphs.connectedComponents;
+package ds.graphs.undirectedgraph.connectedComponents;
 
-import ds.graphs.Graph;
-import ds.graphs.dfs.DepthFirstSearchPaths;
+import ds.graphs.undirectedgraph.Graph;
 
 public class Runner {
     public static void main(String[] args) {

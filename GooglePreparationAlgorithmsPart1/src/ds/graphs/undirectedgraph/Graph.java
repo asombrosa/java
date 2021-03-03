@@ -1,4 +1,4 @@
-package ds.graphs;
+package ds.graphs.undirectedgraph;
 
 public class Graph {
     int vertices;

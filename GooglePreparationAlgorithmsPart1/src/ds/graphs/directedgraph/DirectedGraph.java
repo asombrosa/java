@@ -1,6 +1,6 @@
-package ds.directed.graph;
+package ds.graphs.directedgraph;
 
-import ds.graphs.Bag;
+import ds.graphs.undirectedgraph.Bag;
 
 public class DirectedGraph {
     Bag<Integer>[] adj;

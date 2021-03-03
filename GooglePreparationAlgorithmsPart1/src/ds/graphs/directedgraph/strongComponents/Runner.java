@@ -1,6 +1,6 @@
-package ds.directed.graph.strongComponents;
+package ds.graphs.directedgraph.strongComponents;
 
-import ds.directed.graph.DirectedGraph;
+import ds.graphs.directedgraph.DirectedGraph;
 
 public class Runner {
     public static void main(String[] args) {

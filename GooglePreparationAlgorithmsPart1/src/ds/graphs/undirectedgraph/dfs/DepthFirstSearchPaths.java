@@ -1,6 +1,6 @@
-package ds.graphs.dfs;
+package ds.graphs.undirectedgraph.dfs;
 
-import ds.graphs.Graph;
+import ds.graphs.undirectedgraph.Graph;
 
 import java.util.Stack;
 

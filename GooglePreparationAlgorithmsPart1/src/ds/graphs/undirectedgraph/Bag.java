@@ -1,4 +1,4 @@
-package ds.graphs;
+package ds.graphs.undirectedgraph;
 
 import java.util.Iterator;
 
@@ -19,7 +19,7 @@ public class Bag<T extends Comparable<T>> implements Iterable<T>{
         return new ArrayIterator();
     }
 
-    class ArrayIterator implements Iterator {
+    class ArrayIterator implements Iterator<T> {
         int val;
         @Override
         public boolean hasNext() {
@@ -27,7 +27,7 @@ public class Bag<T extends Comparable<T>> implements Iterable<T>{
         }
 
         @Override
-        public Object next() {
+        public T next() {
             return array[val++];
         }
     }

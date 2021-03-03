@@ -1,6 +1,6 @@
-package ds.graphs.bfs;
+package ds.graphs.undirectedgraph.bfs;
 
-import ds.graphs.Graph;
+import ds.graphs.undirectedgraph.Graph;
 
 public class Runner {
     public static void main(String[] args) {

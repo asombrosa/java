@@ -1,6 +1,6 @@
-package ds.directed.graph.topologicalSort;
+package ds.graphs.directedgraph.topologicalSort;
 
-import ds.directed.graph.DirectedGraph;
+import ds.graphs.directedgraph.DirectedGraph;
 
 public class Runner {
     public static void main(String[] args) {

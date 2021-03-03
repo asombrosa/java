@@ -1,6 +1,6 @@
-package ds.directed.graph.dfs;
+package ds.graphs.directedgraph.dfs;
 
-import ds.directed.graph.DirectedGraph;
+import ds.graphs.directedgraph.DirectedGraph;
 
 import java.util.Stack;
 

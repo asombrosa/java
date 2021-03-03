@@ -1,9 +1,7 @@
-package ds.directed.graph.strongComponents;
+package ds.graphs.directedgraph.strongComponents;
 
-import ds.directed.graph.DirectedGraph;
-import ds.directed.graph.topologicalSort.TopologicalOrder;
-
-import javax.security.auth.kerberos.KerberosPrincipal;
+import ds.graphs.directedgraph.DirectedGraph;
+import ds.graphs.directedgraph.topologicalSort.TopologicalOrder;
 
 public class KosarajuSharirSCC {
     boolean[] marked;

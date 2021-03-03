@@ -1,4 +1,4 @@
-package ds.directed.graph;
+package ds.graphs.directedgraph;
 
 public class Runner {
     public static void main(String[] args) {
