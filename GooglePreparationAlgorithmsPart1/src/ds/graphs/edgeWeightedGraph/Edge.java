@@ -20,11 +20,11 @@ public class Edge implements Comparable<Edge> {
         return 0;
     }
 
-    int either() {
+    public int either() {
         return v;
     }
 
-    int other(int v) {
+    public int other(int v) {
         if (v == this.v) {
             return w;
         }
