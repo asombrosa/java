@@ -6,7 +6,7 @@ public class EdgeWeightedGraph {
     Bag<Edge>[] arr;
     int vertices;
 
-    EdgeWeightedGraph(int v) {
+    public EdgeWeightedGraph(int v) {
         arr = new Bag[v];
         this.vertices = v;
         for (int i = 0; i < v; i++) {
@@ -14,7 +14,7 @@ public class EdgeWeightedGraph {
         }
     }
 
-    void addEdge(Edge e) {
+    public void addEdge(Edge e) {
         int v = e.either();
         int w = e.other(v);
         arr[v].add(e);
@@ -25,7 +25,7 @@ public class EdgeWeightedGraph {
         return arr[v];
     }
 
-    void print(){
+    public void print(){
         for(int i=0;i<vertices;i++) {
             for(Edge w : adj(i)) {
                 System.out.println(w);
