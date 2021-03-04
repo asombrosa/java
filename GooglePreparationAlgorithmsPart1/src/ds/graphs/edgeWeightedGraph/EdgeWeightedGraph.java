@@ -23,7 +23,7 @@ public class EdgeWeightedGraph {
         int v = e.either();
         int w = e.other(v);
         arr[v].add(e);
-        // arr[w].add(e);
+        arr[w].add(e);
         vertices++;
     }
 
