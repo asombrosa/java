@@ -1,15 +1,13 @@
 package dp.fibonacci;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 /*
 Time complexity : O(n)
 Space complexity : O(n)
  */
 public class MemoizedFibonacci {
-    BigInteger arr[];
+    BigInteger[] arr;
     MemoizedFibonacci(){
         arr = new BigInteger[100];
     }
