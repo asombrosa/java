@@ -11,7 +11,7 @@ target : 'skateboard' , ['bo', 'rd', 'ate', 't', 'ska', 'sk', 'boar']
 Output : 0
 
 target : '' , ['ab', 'abc', 'cd', 'def', 'abcd']
-Output : true
+Output : 1
 
 Time complexity : O(n * m ^2)
 Space complexity : O(m * 2)
