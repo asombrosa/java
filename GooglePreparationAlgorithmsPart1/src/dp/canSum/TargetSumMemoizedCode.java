@@ -21,7 +21,7 @@ output : no
 Note : all numbers are positive
        We can use numbers in array any number of times
 
-Time complexity : O(n)
+Time complexity : O(m * n)
 Space complexity : O(m)
  */
 public class TargetSumMemoizedCode {
