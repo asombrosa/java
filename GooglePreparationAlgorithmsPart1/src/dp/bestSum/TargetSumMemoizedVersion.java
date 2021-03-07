@@ -22,8 +22,8 @@ Output : []
 8 : [1, 3, 5, 7]
 Output : [1, 7] or [3, 5]
 
-Time complexity : O(n ^ m * m)
-Space complexity : O(m)
+Time complexity : O(m ^ 2 * n)
+Space complexity : O(m ^ 2)
  */
 public class TargetSumMemoizedVersion {
     Map<Integer, List<Integer>> map;
