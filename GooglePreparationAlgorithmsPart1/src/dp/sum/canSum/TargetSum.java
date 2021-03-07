@@ -1,4 +1,4 @@
-package dp.canSum;
+package dp.sum.canSum;
 
 /*
 Get target sum using some numbers of the array.

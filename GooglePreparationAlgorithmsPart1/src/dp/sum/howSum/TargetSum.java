@@ -1,4 +1,4 @@
-package dp.howSum;
+package dp.sum.howSum;
 
 import java.util.ArrayList;
 import java.util.List;

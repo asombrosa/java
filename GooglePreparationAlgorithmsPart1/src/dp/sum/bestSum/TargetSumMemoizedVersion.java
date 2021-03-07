@@ -1,7 +1,9 @@
-package dp.bestSum;
+package dp.sum.bestSum;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /*
 Return the smallest combination of numbers
@@ -20,20 +22,22 @@ Output : []
 8 : [1, 3, 5, 7]
 Output : [1, 7] or [3, 5]
 
-Time complexity : O(n ^ m * m)
-Space complexity : O(m * m) => O(m ^ 2)
+Time complexity : O(m ^ 2 * n)
+Space complexity : O(m ^ 2)
  */
-public class TargetSum {
-    List<Integer> list;
+public class TargetSumMemoizedVersion {
+    Map<Integer, List<Integer>> map;
 
-    TargetSum() {
-        list = new ArrayList<>();
+    TargetSumMemoizedVersion() {
+        map = new HashMap<>();
     }
 
     public List<Integer> bestSum(int targetSum, Integer[] numbers) {
+        if (map.containsKey(targetSum)) {
+            return map.get(targetSum);
+        }
         if (targetSum == 0) {
-            list = new ArrayList<>();
-            return list;
+            return new ArrayList<>();
         }
         if (targetSum < 0) {
             return null;
@@ -42,26 +46,28 @@ public class TargetSum {
         for (Integer num : numbers) {
             int rem = targetSum - num;
             List<Integer> remResult = bestSum(rem, numbers);
-            if(remResult != null) {
-                list.add(num);
-                if (shortestCombination == null || list.size() < shortestCombination.size()) {
-                    shortestCombination = list;
+            if (remResult != null) {
+                if (shortestCombination == null || remResult.size() < shortestCombination.size()) {
+                    shortestCombination = new ArrayList<>(remResult);
+                    shortestCombination.add(num);
                 }
             }
         }
-        return shortestCombination;
+
+        map.put(targetSum, shortestCombination);
+        return map.get(targetSum);
     }
 
     public static void main(String[] args) {
-        TargetSum targetSum = new TargetSum();
+        TargetSumMemoizedVersion targetSum = new TargetSumMemoizedVersion();
         System.out.println(targetSum.bestSum(7, new Integer[]{5, 3, 4, 7})); // [7]
-        targetSum = new TargetSum();
+        targetSum = new TargetSumMemoizedVersion();
         System.out.println(targetSum.bestSum(8, new Integer[]{2, 3, 5})); // [3, 5]
-        targetSum = new TargetSum();
+        targetSum = new TargetSumMemoizedVersion();
         System.out.println(targetSum.bestSum(8, new Integer[]{1, 4, 5})); // [4, 4]
-        targetSum = new TargetSum();
+        targetSum = new TargetSumMemoizedVersion();
         System.out.println(targetSum.bestSum(100, new Integer[]{1, 2, 25})); // [25, 25, 25, 25]
-        targetSum = new TargetSum();
+        targetSum = new TargetSumMemoizedVersion();
         System.out.println(targetSum.bestSum(300, new Integer[]{7, 14})); // null
 
     }

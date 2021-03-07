@@ -1,4 +1,4 @@
-package dp.canSum;
+package dp.sum.canSum;
 
 import java.util.HashMap;
 import java.util.Map;
