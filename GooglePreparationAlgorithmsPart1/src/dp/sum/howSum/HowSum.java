@@ -19,10 +19,10 @@ Output : []
 Time complexity : O(n ^ m * m)
 Space complexity : O(m)
  */
-public class TargetSum {
+public class HowSum {
     List<Integer> list;
 
-    TargetSum() {
+    HowSum() {
         list = new ArrayList<>();
     }
 
@@ -44,15 +44,15 @@ public class TargetSum {
     }
 
     public static void main(String[] args) {
-        TargetSum targetSum = new TargetSum();
-        System.out.println(targetSum.howSum(7, new Integer[]{2, 3}));
-        targetSum = new TargetSum();
-        System.out.println(targetSum.howSum(7, new Integer[]{5, 3, 4, 7}));
-        targetSum = new TargetSum();
-        System.out.println(targetSum.howSum(7, new Integer[]{2, 4}));
-        targetSum = new TargetSum();
-        System.out.println(targetSum.howSum(8, new Integer[]{2, 3, 5}));
-        targetSum = new TargetSum();
-        System.out.println(targetSum.howSum(300, new Integer[]{7, 14}));
+        HowSum howSum = new HowSum();
+        System.out.println(howSum.howSum(7, new Integer[]{2, 3}));
+        howSum = new HowSum();
+        System.out.println(howSum.howSum(7, new Integer[]{5, 3, 4, 7}));
+        howSum = new HowSum();
+        System.out.println(howSum.howSum(7, new Integer[]{2, 4}));
+        howSum = new HowSum();
+        System.out.println(howSum.howSum(8, new Integer[]{2, 3, 5}));
+        howSum = new HowSum();
+        System.out.println(howSum.howSum(300, new Integer[]{7, 14}));
     }
 }

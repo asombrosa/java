@@ -21,7 +21,7 @@ Note : all numbers are positive
 Time complexity : O(n ^ m)
 Space complexity : O(m)
  */
-public class TargetSum {
+public class CanSum {
     public boolean canSum(int targetSum, Integer[] numbers) {
         if(targetSum == 0) {
             return true;
@@ -39,11 +39,11 @@ public class TargetSum {
     }
 
     public static void main(String[] args) {
-        TargetSum targetSum = new TargetSum();
-        System.out.println(targetSum.canSum(7, new Integer[]{2, 3}));
-        System.out.println(targetSum.canSum(7, new Integer[]{5, 3, 4, 7}));
-        System.out.println(targetSum.canSum(7, new Integer[]{2, 4}));
-        System.out.println(targetSum.canSum(7, new Integer[]{2, 3, 5}));
-        System.out.println(targetSum.canSum(300, new Integer[]{7, 14}));
+        CanSum canSum = new CanSum();
+        System.out.println(canSum.canSum(7, new Integer[]{2, 3}));
+        System.out.println(canSum.canSum(7, new Integer[]{5, 3, 4, 7}));
+        System.out.println(canSum.canSum(7, new Integer[]{2, 4}));
+        System.out.println(canSum.canSum(7, new Integer[]{2, 3, 5}));
+        System.out.println(canSum.canSum(300, new Integer[]{7, 14}));
     }
 }

@@ -21,11 +21,11 @@ Output : []
 Time complexity : O(n * m * m) => O(n*m^2)
 Space complexity : O(m * m) => O(m ^ 2)
  */
-public class TargetSumMemoizedCode {
+public class HowSumMemoizedCode {
     List<Integer> list;
     Map<Integer, List<Integer>> map;
 
-    TargetSumMemoizedCode() {
+    HowSumMemoizedCode() {
         list = new ArrayList<>();
         map = new HashMap<>();
     }
@@ -53,15 +53,15 @@ public class TargetSumMemoizedCode {
     }
 
     public static void main(String[] args) {
-        TargetSumMemoizedCode targetSum = new TargetSumMemoizedCode();
+        HowSumMemoizedCode targetSum = new HowSumMemoizedCode();
         System.out.println(targetSum.howSum(7, new Integer[]{2, 3}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new HowSumMemoizedCode();
         System.out.println(targetSum.howSum(7, new Integer[]{5, 3, 4, 7}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new HowSumMemoizedCode();
         System.out.println(targetSum.howSum(7, new Integer[]{2, 4}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new HowSumMemoizedCode();
         System.out.println(targetSum.howSum(8, new Integer[]{2, 3, 5}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new HowSumMemoizedCode();
         System.out.println(targetSum.howSum(300, new Integer[]{7, 14}));
     }
 }

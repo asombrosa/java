@@ -25,10 +25,10 @@ Output : [1, 7] or [3, 5]
 Time complexity : O(m ^ 2 * n)
 Space complexity : O(m ^ 2)
  */
-public class TargetSumMemoizedVersion {
+public class BestSumMemoizedVersion {
     Map<Integer, List<Integer>> map;
 
-    TargetSumMemoizedVersion() {
+    BestSumMemoizedVersion() {
         map = new HashMap<>();
     }
 
@@ -59,15 +59,15 @@ public class TargetSumMemoizedVersion {
     }
 
     public static void main(String[] args) {
-        TargetSumMemoizedVersion targetSum = new TargetSumMemoizedVersion();
+        BestSumMemoizedVersion targetSum = new BestSumMemoizedVersion();
         System.out.println(targetSum.bestSum(7, new Integer[]{5, 3, 4, 7})); // [7]
-        targetSum = new TargetSumMemoizedVersion();
+        targetSum = new BestSumMemoizedVersion();
         System.out.println(targetSum.bestSum(8, new Integer[]{2, 3, 5})); // [3, 5]
-        targetSum = new TargetSumMemoizedVersion();
+        targetSum = new BestSumMemoizedVersion();
         System.out.println(targetSum.bestSum(8, new Integer[]{1, 4, 5})); // [4, 4]
-        targetSum = new TargetSumMemoizedVersion();
+        targetSum = new BestSumMemoizedVersion();
         System.out.println(targetSum.bestSum(100, new Integer[]{1, 2, 25})); // [25, 25, 25, 25]
-        targetSum = new TargetSumMemoizedVersion();
+        targetSum = new BestSumMemoizedVersion();
         System.out.println(targetSum.bestSum(300, new Integer[]{7, 14})); // null
 
     }

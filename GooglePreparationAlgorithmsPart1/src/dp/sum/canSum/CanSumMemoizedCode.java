@@ -24,9 +24,9 @@ Note : all numbers are positive
 Time complexity : O(m * n)
 Space complexity : O(m)
  */
-public class TargetSumMemoizedCode {
+public class CanSumMemoizedCode {
     Map<Integer, Boolean> map;
-    TargetSumMemoizedCode() {
+    CanSumMemoizedCode() {
         map = new HashMap<>();
     }
     public boolean canSum(int targetSum, Integer[] numbers) {
@@ -51,15 +51,15 @@ public class TargetSumMemoizedCode {
     }
 
     public static void main(String[] args) {
-        TargetSumMemoizedCode targetSum = new TargetSumMemoizedCode();
+        CanSumMemoizedCode targetSum = new CanSumMemoizedCode();
         System.out.println(targetSum.canSum(7, new Integer[]{2, 3}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new CanSumMemoizedCode();
         System.out.println(targetSum.canSum(7, new Integer[]{5, 3, 4, 7}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new CanSumMemoizedCode();
         System.out.println(targetSum.canSum(7, new Integer[]{2, 4}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new CanSumMemoizedCode();
         System.out.println(targetSum.canSum(7, new Integer[]{2, 3, 5}));
-        targetSum = new TargetSumMemoizedCode();
+        targetSum = new CanSumMemoizedCode();
         System.out.println(targetSum.canSum(300, new Integer[]{7, 14}));
     }
 }
