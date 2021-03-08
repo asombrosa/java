@@ -24,7 +24,7 @@ public class CountConstructMemoizedVersion {
         map = new HashMap<>();
     }
 
-    public int canConstruct(String target, String[] strings) {
+    public int countConstruct(String target, String[] strings) {
         if (map.containsKey(target)) {
             return map.get(target);
         }
@@ -35,7 +35,7 @@ public class CountConstructMemoizedVersion {
         for (String string : strings) {
             if (target.startsWith(string)) {
                 String temp = target.replaceFirst(string, "");
-                int val = canConstruct(temp, strings);
+                int val = countConstruct(temp, strings);
                 value += val;
             }
         }
@@ -44,13 +44,13 @@ public class CountConstructMemoizedVersion {
     }
 
     public static void main(String[] args) {
-        CountConstructMemoizedVersion canConstruct = new CountConstructMemoizedVersion();
-        System.out.println(canConstruct.canConstruct("abcdef", new String[]{"ab", "abc", "cd", "def", "abcd"}));
-        System.out.println(canConstruct.canConstruct("skateboard", new String[]{"bo", "rd", "ate", "t", "ska", "sk", "boar"}));
-        System.out.println(canConstruct.canConstruct("", new String[]{"ab", "abc", "cd", "def", "abcd"}));
-        System.out.println(canConstruct.canConstruct("enterapotentpot", new String[]{"a", "p", "ent", "enter", "ot", "o", "t"}));
-        System.out.println(canConstruct.canConstruct("purple", new String[]{"purp", "p", "ur", "le", "purpl"}));
-        System.out.println(canConstruct.canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
+        CountConstructMemoizedVersion countConstruct = new CountConstructMemoizedVersion();
+        System.out.println(countConstruct.countConstruct("abcdef", new String[]{"ab", "abc", "cd", "def", "abcd"}));
+        System.out.println(countConstruct.countConstruct("skateboard", new String[]{"bo", "rd", "ate", "t", "ska", "sk", "boar"}));
+        System.out.println(countConstruct.countConstruct("", new String[]{"ab", "abc", "cd", "def", "abcd"}));
+        System.out.println(countConstruct.countConstruct("enterapotentpot", new String[]{"a", "p", "ent", "enter", "ot", "o", "t"}));
+        System.out.println(countConstruct.countConstruct("purple", new String[]{"purp", "p", "ur", "le", "purpl"}));
+        System.out.println(countConstruct.countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
         new String[]{
         "e",
         "ee",
