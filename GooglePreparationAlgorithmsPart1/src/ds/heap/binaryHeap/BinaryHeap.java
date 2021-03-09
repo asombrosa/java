@@ -21,24 +21,32 @@ public class BinaryHeap {
         return val1 < val2;
     }
 
-    private void swim(int k) {
-        while (k > 0 && less(heap[(k - 1) / 2], heap[k])) {
-            exchange((k - 1) / 2, k);
-            k = (k - 1) / 2;
+    private void swim(int childIndex) {
+        while (childIndex > 0) {
+            int parentIndex = (childIndex - 1) / 2;
+            if (isChildSmallerThanParent(heap[parentIndex], heap[childIndex])) {
+                break;
+            }
+            exchange(parentIndex, childIndex);
+            childIndex = parentIndex;
         }
     }
 
-    private void sink(int k) {
-        while (2 * k < heap.length) {
-            int j = 2 * k + 1;
-            if (j < heap.length - 1 && less(heap[j], heap[j + 1])) {
-                j++;
+    private boolean isChildSmallerThanParent(int parent, int child) {
+        return less(child, parent);
+    }
+
+    private void sink(int parentIndex) {
+        while (2 * parentIndex < heap.length) {
+            int child = 2 * parentIndex + 1;
+            if (child < heap.length - 1 && less(heap[child], heap[child + 1])) {
+                child++;
             }
-            if (!less(k, j)) {
+            if (isChildSmallerThanParent(parentIndex, child)) {
                 break;
             }
-            exchange(j, k);
-            k = j;
+            exchange(child, parentIndex);
+            parentIndex = child;
         }
     }
 
@@ -54,17 +62,17 @@ public class BinaryHeap {
     }
 
     public static void main(String[] args) {
-        BinaryHeap bh = new BinaryHeap(10);
-        bh.insert(3);
-        bh.insert(2);
-        bh.insert(1);
-        System.out.println(bh);
-        bh.insert(5);
-        System.out.println(bh);
-        bh.insert(4);
-        System.out.println(bh);
-        bh.delete();
-        System.out.println(bh);
+        BinaryHeap binaryHeap = new BinaryHeap(10);
+        binaryHeap.insert(3);
+        binaryHeap.insert(2);
+        binaryHeap.insert(1);
+        System.out.println(binaryHeap);
+        binaryHeap.insert(5);
+        System.out.println(binaryHeap);
+        binaryHeap.insert(4);
+        System.out.println(binaryHeap);
+        binaryHeap.delete();
+        System.out.println(binaryHeap);
     }
 
     @Override
