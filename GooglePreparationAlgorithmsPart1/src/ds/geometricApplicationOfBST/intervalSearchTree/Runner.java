@@ -11,6 +11,7 @@ public class Runner {
         bst.put(21,24);
         bst.inorder();
         System.out.println(bst.range(12,14));
+        System.out.println(bst.range(12,16));
         System.out.println(bst.range(22,23));
     }
 }

@@ -1,5 +1,12 @@
 package ds.geometricApplicationOfBST.intervalSearchTree;
 
+/*
+check if lines are intersecting
+store max node at each node
+
+Time complexity : O(log N)
+Use Red black trees for best performance
+ */
 public class IntervalSearchTree<K extends Comparable<K>> {
     Node root;
 
@@ -17,7 +24,7 @@ public class IntervalSearchTree<K extends Comparable<K>> {
         }
 
         public String toString() {
-            return "[ Key : " + start + ", Value : " + end + ", maxNode : " + maxNode + " ]";
+            return "[ Start : " + start + ", End : " + end + ", maxNode : " + maxNode + " ]";
         }
     }
 
