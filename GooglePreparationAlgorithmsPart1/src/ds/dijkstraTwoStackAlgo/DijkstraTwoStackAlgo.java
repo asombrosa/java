@@ -2,6 +2,9 @@ package ds.dijkstraTwoStackAlgo;
 
 import java.util.Stack;
 
+/*
+Time complexity : O(N) where N is length of string
+ */
 public class DijkstraTwoStackAlgo {
     Stack<String> valueStack = new Stack<>();
     Stack<String> operatorStack = new Stack<>();
@@ -27,21 +30,13 @@ public class DijkstraTwoStackAlgo {
     }
 
     private int calculate(String operator, int value1, int value2) {
-        int result = 0;
-        switch (operator) {
-            case "+":
-                result = value1 + value2;
-                break;
-            case "-":
-                result = value2 - value1;
-                break;
-            case "*":
-                result = value1 * value2;
-                break;
-            case "/":
-                result = value2 / value1;
-        }
-        return result;
+        return switch (operator) {
+            case "+" -> value1 + value2;
+            case "-" -> value2 - value1;
+            case "*" -> value1 * value2;
+            case "/" -> value2 / value1;
+            default -> 0;
+        };
     }
 
     public static void main(String[] args) {
