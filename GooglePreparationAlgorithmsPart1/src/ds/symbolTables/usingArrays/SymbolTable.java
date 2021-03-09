@@ -6,6 +6,12 @@ public class SymbolTable<K extends Comparable<K>, V extends Comparable<V>> {
     SymbolTableElement<K, V>[] symbolTable = new SymbolTableElement[10];
     int counter = 0;
 
+    /*
+        Rank means number of children the key has
+        Steps:
+            1. If key is present in symbol table, return
+            2. If key not present then no of elements smaller than key
+     */
     public int rank(K key) {
         int low = 0;
         int high = counter;

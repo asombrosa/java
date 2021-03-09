@@ -1,5 +1,10 @@
 package ds.symbolTables.usingRedBlackTrees;
 
+/*
+Insertion in bst and red black trees have the same code,
+but red back tree insertion is faster than BST insertion
+bcoz red black tree are balanced
+ */
 public class RedBlackTree<K extends Comparable<K>, V> {
     Node root;
     private static final boolean RED = true;
