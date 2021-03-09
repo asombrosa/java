@@ -31,7 +31,7 @@ gridTraveller(2, 3) ->
        0,2   1,1  0,2  1,1  1,1  2,0
 
 Time complexity : O(m * n + m * n) => O(m * n)
-Space complexity : O(m+n)
+Space complexity : O(m * n)
 
  */
 public class TabulizedGridTraveller {
