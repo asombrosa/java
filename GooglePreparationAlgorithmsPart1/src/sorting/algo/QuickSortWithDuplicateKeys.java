@@ -2,6 +2,25 @@ package sorting.algo;
 
 import sorting.Sortable;
 
+/*
+keep two pointers low and high
+initialize lt = low; gt = high;
+iterate from lt to gt using i pointer:
+    1. if value at i (current) == value at low
+        i++;
+    2. if value at current < value at low
+        exchange(i, lt);
+        i++; lt++;
+    3. if value at current > value at low
+        exchange(i, gt);
+        i++;gt--;
+sort(low, lt);    ===> this contains elements less than current
+sort(gt, high);   ===> this contains elements greater than current
+
+Note: elements between lt and gt are equal ==> hence need not be sorted
+
+Time complexity : O(N)
+ */
 public class QuickSortWithDuplicateKeys implements Sortable {
     public <T extends Comparable<T>> void sort(T[] a, int low, int high) {
         if (high <= low) {

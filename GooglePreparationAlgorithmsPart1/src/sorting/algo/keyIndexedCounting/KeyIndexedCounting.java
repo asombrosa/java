@@ -1,5 +1,15 @@
 package sorting.algo.keyIndexedCounting;
 
+/*
+Steps:
+    1. populate count[] array with frequency
+    2. store count[] with cumulative frequency
+    3. populate aux[] array with characters using count[char]
+    4. increment count[char] in the same step
+    5. copy aux[] to initial array[]
+
+Time complexity : O(N * R)
+ */
 public class KeyIndexedCounting {
     public static void main(String[] args) {
         char[] array = "dacffbdbfbea".toCharArray();

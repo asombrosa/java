@@ -3,6 +3,22 @@ package sorting.algo;
 import sorting.Item;
 import sorting.Sortable;
 
+/*
+Keep pointers for low and high elements
+keep additional two pointers i = low + 1 and j = high + 1:
+keep incrementing i if i < low
+keep decrementing j if j > high
+exchange i and j
+..
+continue till j <= i
+now exchange j and low
+return i ==> partitioning element
+Now sort from low to partitioning element
+and then sort from partitioning element + 1 to high
+
+Time complexity : O(N * N)
+
+ */
 public class QuickSort implements Sortable {
     public <T extends Comparable<T>> int partition(T[] array, int low, int high) {
         int i = low;

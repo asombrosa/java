@@ -4,7 +4,11 @@ import sorting.Item;
 import sorting.Sortable;
 
 /*
+Iterative solution of merge sort
+
 Caveat - More space
+
+Time complexity : O(N log N)
  */
 public class MergeSortBottomUpApproachWithoutRecursion implements Sortable {
 

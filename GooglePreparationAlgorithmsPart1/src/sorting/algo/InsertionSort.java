@@ -15,6 +15,9 @@ move to next
 place it in the correct position
 ..
 continue
+
+Time complexity : O(N * N)
+
  */
 public class InsertionSort implements Sortable {
     @Override

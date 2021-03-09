@@ -7,6 +7,8 @@ import java.util.Random;
 
 /*
 Shuffle the deck of cards
+
+Time complexity : O(n)
  */
 public class ShuffleSort implements Sortable {
     public <T extends Comparable<T>> void sort(T[] a) {

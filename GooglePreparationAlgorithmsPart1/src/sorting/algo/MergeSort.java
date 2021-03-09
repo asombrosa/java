@@ -4,7 +4,12 @@ import sorting.Item;
 import sorting.Sortable;
 
 /*
-1 2 3 4 5 6 7
+Sort array from left to mid
+then sort array from mid + 1 to right
+then merge the arrays
+
+Time complexity : O(n log n)
+
  */
 public class MergeSort implements Sortable {
 

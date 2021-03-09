@@ -4,9 +4,13 @@ import sorting.Item;
 import sorting.Sortable;
 
 /*
-start i from 0
-find min replace with i
-increment i
+Algo :
+1. start i from 0
+2. find min from i+1
+3. replace with ith element
+
+Time complexity : O(N * N)
+
  */
 public class SelectionSort implements Sortable {
     @Override

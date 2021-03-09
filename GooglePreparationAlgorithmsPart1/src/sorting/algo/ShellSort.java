@@ -6,6 +6,8 @@ import sorting.Sortable;
 /*
 h sort
 insertion sort in h passes
+
+Time complexity : O(n * n)
  */
 public class ShellSort implements Sortable {
 

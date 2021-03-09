@@ -2,6 +2,24 @@ package sorting.algo;
 
 import sorting.Sortable;
 
+/*
+create a max heap(parent greater than children) ==> O(N * log N)
+sort()                                          ==> O(N * log N)
+
+Steps to perform sink operation:
+    1. Select max child of parent 
+    2. Exchange with parent
+    
+Steps to create a max heap : 
+    1. Iterate over elements => Start with (N - 1) / 2 => consider it as parent
+    2. perform sink operation for parent
+
+Steps to sort : 
+    1. Exchange 0th element with last element
+    2. perform sink operation with 0th element
+    
+Time complexity : O(N * log N)
+ */
 public class HeapSort implements Sortable {
     int N;
     Comparable[] heap;
