@@ -11,7 +11,7 @@ public class Stack {
     public String pop(){
         if(head == null)
             return null;
-        Node temp = head.next;
+        Node temp = head;
         String item = temp.data;
         head = head.next;
         temp = null;

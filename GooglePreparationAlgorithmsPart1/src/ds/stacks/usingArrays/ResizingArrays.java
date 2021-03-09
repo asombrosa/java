@@ -1,22 +1,22 @@
 package ds.stacks.usingArrays;
-
+/*
+If array is full, double its size
+If array is 3/4 empty, decrease size by half
+ */
 public class ResizingArrays {
     String[] array = new String[1];
-    int N = 0;
+    int current = 0;
 
     public void push(String input) {
-        if (N == array.length) {
+        if (current == array.length) {
             array = resize(2 * array.length);
         }
-        array[N++] = input;
+        array[current++] = input;
     }
 
     private String[] resize(int size) {
         String[] arrayCopy = new String[size];
-        if(size > array.length){
-            size = array.length;
-        }
-        for (int index = 0; index < size; index++) {
+        for (int index = 0; index < current; index++) {
             arrayCopy[index] = array[index];
         }
         return arrayCopy;
@@ -33,9 +33,9 @@ public class ResizingArrays {
     }
 
     public String pop() {
-        String item = array[--N];
-        array[N] = null;
-        if (N > 0 && N == array.length / 4) {
+        String item = array[--current];
+        array[current] = null;
+        if (current > 0 && current == array.length / 4) {
             array = resize(array.length / 2);
         }
         return item;
