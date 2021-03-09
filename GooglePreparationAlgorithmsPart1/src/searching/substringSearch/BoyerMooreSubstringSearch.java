@@ -1,21 +1,32 @@
 package searching.substringSearch;
 
+/*
+Steps:
+    1. Initialize :
+        a) Initialize array with given radix (i.e 256) with -1
+        b) Put last index of character of pattern in array[]
+    2. Search :
+        a) Iterate over the text and skip according to value in array[]
+        b) If value in array is -1 skip 1
+
+Time complexity : O(N * M)
+ */
 public class BoyerMooreSubstringSearch {
     private final int M;
     private final String pattern;
-    private final int[] right;
+    private final int[] lastIndexOfCharacter;
 
     BoyerMooreSubstringSearch(String pattern) {
         int r = 256;
         this.pattern = pattern;
         this.M = pattern.length();
-        right = new int[r];
+        lastIndexOfCharacter = new int[r];
         for (int c = 0; c < r; c++) {
-            right[c] = -1;
+            lastIndexOfCharacter[c] = -1;
         }
 
         for (int c = 0; c < M; c++) {
-            right[pattern.charAt(c)] = c;
+            lastIndexOfCharacter[pattern.charAt(c)] = c;
         }
     }
 
@@ -26,7 +37,7 @@ public class BoyerMooreSubstringSearch {
             skip = 0;
             for (int j = M - 1; j >= 0; j--) {
                 if (pattern.charAt(j) != text.charAt(i + j)) {
-                    skip = Math.max(1, j - right[text.charAt(i + j)]);
+                    skip = Math.max(1, j - lastIndexOfCharacter[text.charAt(i + j)]);
                     break;
                 }
             }

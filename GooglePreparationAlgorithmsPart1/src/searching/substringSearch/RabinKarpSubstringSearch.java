@@ -1,5 +1,9 @@
 package searching.substringSearch;
 
+/*
+Buggy code
+//TO-DO
+ */
 public class RabinKarpSubstringSearch {
     int R = 256;
     int Q = 997;

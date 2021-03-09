@@ -1,5 +1,16 @@
 package searching.substringSearch;
 
+/*
+Deterministic non finite automata (dfa)
+Steps:
+    1. Create dfa for pattern
+        a) assign 1 value to [char at 0][0]
+        b) copy entire column to next
+        c) change value of [char at j+1][j] to j+1
+    2. Look up value in array[][]
+    3. If j == M(pattern length) then found in text
+Time complexity : O(M) => where M is size of pattern
+ */
 public class KnuthMorrisPrattSubstringSearch {
     private final int R;
     String pattern;
