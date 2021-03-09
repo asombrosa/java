@@ -1,5 +1,12 @@
 package unionFind.quickFind;
 
+/*
+
+Using array to store index of id[q] in p if p is connected to q
+Time complexity of union     : O(N)
+Time complexity of connected : O(1)
+
+ */
 public class QuickFindUF {
     int[] id;
 

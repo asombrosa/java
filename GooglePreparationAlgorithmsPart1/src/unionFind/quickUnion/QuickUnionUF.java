@@ -1,5 +1,12 @@
 package unionFind.quickUnion;
 
+/*
+Connected logic :
+    if root of both are same, then connected else not
+
+Time complexity of union : O(N)
+Time complexity of connected : O(N)
+ */
 public class QuickUnionUF {
     int[] id;
 

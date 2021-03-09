@@ -1,15 +1,22 @@
 package unionFind.weightedUnionFind;
 
+/*
+
+Always make smaller tree the child, so that height of
+tree is not elongated
+Time complexity of union : O(log N)
+
+ */
 public class WeightedQuickUnionUF {
     int[] id;
-    int[] sz;
+    int[] sizeOfTree;
 
     public WeightedQuickUnionUF(int N) {
         id = new int[N];
-        sz = new int[N];
+        sizeOfTree = new int[N];
         for (int i = 0; i < N; i++) {
             id[i] = i;
-            sz[i] = 1;
+            sizeOfTree[i] = 1;
         }
     }
 
@@ -29,12 +36,12 @@ public class WeightedQuickUnionUF {
         int qRoot = root(q);
         if (pRoot == qRoot) {
             return;
-        } else if (sz[pRoot] < sz[qRoot]) {
-            id[pRoot] = qRoot;
-            sz[qRoot] += sz[pRoot];
+        } else if (sizeOfTree[pRoot] < sizeOfTree[qRoot]) {
+            id[pRoot] = qRoot; // parent of p is q
+            sizeOfTree[qRoot] += sizeOfTree[pRoot];
         } else {
-            id[qRoot] = pRoot;
-            sz[pRoot] += sz[qRoot];
+            id[qRoot] = pRoot; // parent of q is p
+            sizeOfTree[pRoot] += sizeOfTree[qRoot];
         }
     }
 }
