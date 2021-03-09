@@ -1,5 +1,8 @@
 package searching;
 
+/*
+Time complexity : O(log N)
+ */
 public class BinarySearch {
 
     public int searchElement(int[] inputArray, int elementToBeSearched) {
