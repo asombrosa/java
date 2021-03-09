@@ -5,8 +5,10 @@ import sorting.Sortable;
 /*
 kth largest element
 quick sort takes a number and places it in the correct position
-so we wait for the kth element to take it's position
+so we wait for the kth element to take its position
 takes around O(n) time
+
+Time complexity : O(N * k)
  */
 public class QuickSelect implements Sortable {
     public <T extends Comparable<T>> int partition(T[] array, int low, int high) {
@@ -38,20 +40,21 @@ public class QuickSelect implements Sortable {
     }
 
 
-    public <T extends Comparable<T>> Integer search(Integer[] a, int k) {
+    public <T extends Comparable<T>> Integer search(Integer[] array, int kthLargestNumber) {
         int low = 0;
-        int high = a.length - 1;
+        int high = array.length - 1;
         while (low < high) {
-            int j = partition(a, low, high);
-            if (j < k) {
+            int j = partition(array, low, high);
+            if (j < kthLargestNumber) {
                 low = j + 1;
-            } else if (j > k) {
+            } else if (j > kthLargestNumber) {
                 high = j - 1;
             } else {
-                return a[k];
-            }
+                return array[kthLargestNumber]; // if j == kthLargestNumber,
+                // that means we found the
+            }                                   // number at kth position
         }
-        return a[k];
+        return array[kthLargestNumber];
     }
 
     public static void main(String[] args) {
