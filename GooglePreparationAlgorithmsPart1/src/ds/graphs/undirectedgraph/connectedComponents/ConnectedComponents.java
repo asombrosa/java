@@ -2,6 +2,9 @@ package ds.graphs.undirectedgraph.connectedComponents;
 
 import ds.graphs.undirectedgraph.Graph;
 
+/*
+All connected components will have the same id
+ */
 public class ConnectedComponents {
     boolean[] marked;
     int count;
@@ -28,17 +31,14 @@ public class ConnectedComponents {
         return id[v];
     }
 
-    public void dfs(Graph g, int v) {
-        marked[v] = true;
-        id[v] = count;
-        System.out.println(v + " " + id(v));
-        for (int w : g.adj(v)) {
-            if (!marked[w]) {
-                dfs(g, w);
-
+    public void dfs(Graph graph, int currentVertex) {
+        marked[currentVertex] = true;
+        id[currentVertex] = count;
+        System.out.println(currentVertex + " " + id(currentVertex));
+        for (int connectedVertex : graph.adj(currentVertex)) {
+            if (!marked[connectedVertex]) {
+                dfs(graph, connectedVertex);
             }
         }
     }
-
-
 }

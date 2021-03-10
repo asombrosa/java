@@ -12,9 +12,9 @@ public class Graph {
         }
     }
 
-    public void addEdge(int v, int w) {
-        adj[v].add(w);
-        adj[w].add(v);
+    public void addEdge(int vertexOne, int vertexTwo) {
+        adj[vertexOne].add(vertexTwo);
+        adj[vertexTwo].add(vertexOne);
     }
 
     public Iterable<Integer> adj(int v) {
@@ -26,9 +26,9 @@ public class Graph {
     }
 
     public void print() {
-        for (int v = 0; v < 10; v++) {
-            for (int w : adj(v)) {
-                System.out.println(v + " " + w);
+        for (int vertex = 0; vertex < 10; vertex++) {
+            for (int connectedVertex : adj(vertex)) {
+                System.out.println(vertex + " " + connectedVertex);
             }
         }
     }

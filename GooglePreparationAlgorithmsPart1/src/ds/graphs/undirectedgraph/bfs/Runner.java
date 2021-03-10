@@ -14,7 +14,6 @@ public class Runner {
         g.addEdge(3, 5);
         g.addEdge(0, 2);
         g.print();
-        BreadthFirstSearchPaths dfs = new BreadthFirstSearchPaths(g, 0);
-
+        BreadthFirstSearchPaths bfs = new BreadthFirstSearchPaths(g, 0);
     }
 }

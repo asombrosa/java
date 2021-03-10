@@ -5,38 +5,44 @@ import ds.graphs.undirectedgraph.Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+Steps :
+    1. add current vertex to the queue
+    2. fetch adjacent vertices
+    3. if adjacent vertices are not marked add to queue
 
+Time complexity : O(V + E)
+ */
 public class BreadthFirstSearchPaths {
-    private boolean[] marked;
-    private int[] edgeTo;
+    private final boolean[] marked;
+    private final int[] edgeTo;
     int source;
 
-    BreadthFirstSearchPaths(Graph g, int s) {
-        this.source = s;
-        int v = g.getVertices();
-        edgeTo = new int[v];
-        for (int i = 0; i < v; i++) {
-            edgeTo[i] = -1;
+    BreadthFirstSearchPaths(Graph graph, int source) {
+        this.source = source;
+        int vertices = graph.getVertices();
+        edgeTo = new int[vertices];
+        for (int index = 0; index < vertices; index++) {
+            edgeTo[index] = -1;
         }
-        marked = new boolean[v];
-        bfs(g, s);
+        marked = new boolean[vertices];
+        bfs(graph, source);
     }
 
-    private void bfs(Graph g, int s) {
-        Queue<Integer> q = new LinkedList<>();
-        q.add(s);
-        marked[s] = true;
-        while (!q.isEmpty()) {
-            int v = q.poll();
-            System.out.print(v + " ");
-            for (int w : g.adj(v)) {
-                if (!marked[w]) {
-                    q.add(w);
-                    marked[w] = true;
-                    edgeTo[w] = v;
+    private void bfs(Graph graph, int currentVertex) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(currentVertex);
+        marked[currentVertex] = true;
+        while (!queue.isEmpty()) {
+            int vertex = queue.poll();
+            System.out.print(vertex + " ");
+            for (int adjacentVertex : graph.adj(vertex)) {
+                if (!marked[adjacentVertex]) {
+                    queue.add(adjacentVertex);
+                    marked[adjacentVertex] = true;
+                    edgeTo[adjacentVertex] = vertex;
                 }
             }
         }
-
     }
 }
