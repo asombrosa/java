@@ -1,13 +1,13 @@
 package ds.graphs.edgeWeightedGraph;
 
 public class Edge implements Comparable<Edge> {
-    private int v;
-    private int w;
-    private double weight;
+    private final int startVertex;
+    private final int endVertex;
+    private final double weight;
 
-    public Edge(int v, int w, double weight) {
-        this.v = v;
-        this.w = w;
+    public Edge(int startVertex, int endVertex, double weight) {
+        this.startVertex = startVertex;
+        this.endVertex = endVertex;
         this.weight = weight;
     }
 
@@ -21,17 +21,17 @@ public class Edge implements Comparable<Edge> {
     }
 
     public int either() {
-        return v;
+        return startVertex;
     }
 
-    public int other(int v) {
-        if (v == this.v) {
-            return w;
+    public int other(int currentVertex) {
+        if (currentVertex == this.startVertex) {
+            return endVertex;
         }
-        return this.v;
+        return this.startVertex;
     }
 
     public String toString() {
-        return v + " ---- " + weight + " ---- " + w;
+        return startVertex + " ---- " + weight + " ---- " + endVertex;
     }
 }

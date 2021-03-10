@@ -8,6 +8,12 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+Start with the shortest edge,
+find the next shortest connected edge
+
+Time complexity : E log E
+ */
 public class PrimsLazyAlgorithm implements MST {
     boolean[] marked;
     Queue<Edge> mst = new LinkedList<>();

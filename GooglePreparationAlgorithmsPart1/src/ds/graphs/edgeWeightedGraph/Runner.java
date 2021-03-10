@@ -2,7 +2,7 @@ package ds.graphs.edgeWeightedGraph;
 
 public class Runner {
     public static void main(String[] args) {
-        EdgeWeightedGraph edgeWeightedGraph = new EdgeWeightedGraph(12);
+        EdgeWeightedGraph edgeWeightedGraph = new EdgeWeightedGraph(15);
         edgeWeightedGraph.addEdge(new Edge(4, 5, 0.35));
         edgeWeightedGraph.addEdge(new Edge(4, 7, 0.37));
         edgeWeightedGraph.addEdge(new Edge(5, 7, 0.28));
