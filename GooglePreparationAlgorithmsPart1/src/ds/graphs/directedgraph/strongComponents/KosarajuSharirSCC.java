@@ -3,6 +3,9 @@ package ds.graphs.directedgraph.strongComponents;
 import ds.graphs.directedgraph.DirectedGraph;
 import ds.graphs.directedgraph.topologicalSort.TopologicalOrder;
 
+/*
+Run dfs on all vertices in topological order
+ */
 public class KosarajuSharirSCC {
     boolean[] marked;
     int count;

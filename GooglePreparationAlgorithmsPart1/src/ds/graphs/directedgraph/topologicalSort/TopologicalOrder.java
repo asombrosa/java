@@ -3,7 +3,14 @@ package ds.graphs.directedgraph.topologicalSort;
 import ds.graphs.directedgraph.DirectedGraph;
 
 import java.util.Stack;
+/*
+For acyclic graph, point all vertices in same direction
 
+Applications :
+Precedence scheduling (You can start course 5, only after you finish courses 1 to 4)
+Java compiler does cycle detection (A extends B, B extends C, C extends A)
+Microsoft excel does cyclic detection
+ */
 public class TopologicalOrder {
     boolean[] marked;
     Stack<Integer> stack;
