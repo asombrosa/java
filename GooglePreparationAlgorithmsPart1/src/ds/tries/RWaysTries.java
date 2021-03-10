@@ -3,6 +3,44 @@ package ds.tries;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+            s
+         /  |
+        e   h
+      /     |  \
+(9) a   (4) e   o  --
+            |    \    \
+            l     r    w (2)
+            |      \
+            l (10)  e (5)
+
+Steps:
+    1. Insert :
+        a) We create a new node if node is null
+        b) we check if key has reached its end by comparing length
+            i) if yes, the we assign value to the node and return
+           ii) if not, we take the character at current index,
+               and repeat the process
+    2. Search :
+        a) if node is null, return null
+        b) if current index == length of key,
+         if value is not null, then found and return
+    3. Delete :
+        a) get node for key, and set null
+    4. Print :
+        a) Iterate over all the nodes R
+        b) if value is not null, add the prefix to the result queue
+        c) then delete the last character
+        d) repeat the process recursively
+
+Time complexity:
+    search hit  : L
+    search miss : log N
+    insert      : L
+
+Challenge : the only challenge with R ways tries is that we need
+            to use less memory for Unicode (65536 way tries)
+ */
 public class RWaysTries<V> {
     private static final int R = 256;
     private Node root = new Node();

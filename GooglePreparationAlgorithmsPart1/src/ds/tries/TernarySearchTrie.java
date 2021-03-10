@@ -3,11 +3,19 @@ package ds.tries;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+Same like bst, but has 3 children
+
+Time complexity :
+    1. search hit : L + log N
+    2. search miss  : log N
+    3. insert : log N
+ */
 public class TernarySearchTrie<V> {
     private Node root;
 
     private class Node {
-        char c;
+        char character;
         V value;
         Node left, right, mid;
     }
@@ -16,18 +24,18 @@ public class TernarySearchTrie<V> {
         root = put(root, key, value, 0);
     }
 
-    public Node put(Node node, String key, V value, int d) {
-        char c = key.charAt(d);
+    public Node put(Node node, String key, V value, int currentIndex) {
+        char currentCharacter = key.charAt(currentIndex);
         if (node == null) {
             node = new Node();
-            node.c = c;
+            node.character = currentCharacter;
         }
-        if (c < node.c) {
-            node.left = put(node.left, key, value, d);
-        } else if (c > node.c) {
-            node.right = put(node.right, key, value, d);
-        } else if (d < key.length() - 1) {
-            node.mid = put(node.mid, key, value, d + 1);
+        if (currentCharacter < node.character) {
+            node.left = put(node.left, key, value, currentIndex);
+        } else if (currentCharacter > node.character) {
+            node.right = put(node.right, key, value, currentIndex);
+        } else if (currentIndex < key.length() - 1) {
+            node.mid = put(node.mid, key, value, currentIndex + 1);
         } else {
             node.value = value;
         }
@@ -47,9 +55,9 @@ public class TernarySearchTrie<V> {
             return null;
         }
         char c = key.charAt(index);
-        if (c < node.c) {
+        if (c < node.character) {
             return get(node.left, key, index);
-        } else if (c > node.c) {
+        } else if (c > node.character) {
             return get(node.right, key, index);
         } else if (index < key.length() - 1) {
             return get(node.mid, key, index + 1);
@@ -84,13 +92,14 @@ public class TernarySearchTrie<V> {
         return queue;
     }
 
-    private void collect(Node x, StringBuilder prefix, Queue<String> queue) {
-        if (x == null) return;
-        collect(x.left, prefix, queue);
-        if (x.value != null) queue.add(prefix.toString() + x.c);
-        collect(x.mid, prefix.append(x.c), queue);
+    private void collect(Node currentNode, StringBuilder prefix, Queue<String> queue) {
+        if (currentNode == null) return;
+        collect(currentNode.left, prefix, queue);
+        if (currentNode.value != null)  {
+            queue.add(prefix.toString() + currentNode.character);
+        }
+        collect(currentNode.mid, prefix.append(currentNode.character), queue);
         prefix.deleteCharAt(prefix.length() - 1);
-        collect(x.right, prefix, queue);
+        collect(currentNode.right, prefix, queue);
     }
-
 }
