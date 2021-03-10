@@ -5,8 +5,14 @@ import ds.graphs.edgeWeightedDirectedGraph.EdgeWeightedDiGraph;
 
 import java.util.PriorityQueue;
 
+/*
+1. Initialize all distances to positive infinity
+2. pick an edge put it in priority queue
+3. poll it,
+4. then relax all the adjacent edges and repeat
+ */
 public class DijkstraAlgorithm extends SPT {
-    private PriorityQueue<Integer> pq;
+    private final PriorityQueue<Integer> pq;
 
     DijkstraAlgorithm(EdgeWeightedDiGraph graph, int s) {
         super(graph.getVertices());
