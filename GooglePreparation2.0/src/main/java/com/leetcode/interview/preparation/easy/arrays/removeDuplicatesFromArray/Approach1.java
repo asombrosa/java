@@ -1,5 +1,8 @@
 package com.leetcode.interview.preparation.easy.arrays.removeDuplicatesFromArray;
 
+/*
+Time complexity : O(n)
+ */
 public class Approach1 {
     public int removeDuplicates(int[] nums) {
         int count = 0;
